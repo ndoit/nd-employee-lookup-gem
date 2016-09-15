@@ -9,9 +9,9 @@ Gem::Specification.new do |s|
   s.version     = LdcQuery::VERSION
   s.authors     = ["Kingdon Barrett"]
   s.email       = ["kbarret8@nd.edu"]
-  s.homepage    = "TODO"
-  s.summary     = "TODO: Summary of LdcQuery."
-  s.description = "TODO: Description of LdcQuery."
+  s.homepage    = "https://bitbucket.com/nd-oit/ldc_query"
+  s.summary     = "Query LDC Roles and other HRPY data"
+  s.description = "Rails Engine plugin to enable lookup and cacheing of user roles via the interface established by Labor Distribution and also used by Financial Toolkit."
   s.license     = "MIT"
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.rdoc"]
