@@ -2,6 +2,10 @@ require File.expand_path('../boot', __FILE__)
 
 require 'rails/all'
 
+# manage secrets with dotenv
+require 'dotenv'
+Dotenv.load ".env.local", ".env.#{Rails.env}"
+
 Bundler.require(*Rails.groups)
 require "nd_employee_lookup"
 
