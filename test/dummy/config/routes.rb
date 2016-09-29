@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
 
-  mount LdcQuery::Engine => "/ldc_query"
+  mount NdEmployeeLookup::Engine => "/nd_employee_lookup"
 end

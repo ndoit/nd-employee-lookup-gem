@@ -1,2 +1,2 @@
-LdcQuery::Engine.routes.draw do
+NdEmployeeLookup::Engine.routes.draw do
 end

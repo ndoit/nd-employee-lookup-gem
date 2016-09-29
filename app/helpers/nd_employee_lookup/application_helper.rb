@@ -1,4 +1,4 @@
-module LdcQuery
+module NdEmployeeLookup
   module ApplicationHelper
   end
 end
