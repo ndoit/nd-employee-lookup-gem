@@ -1,3 +1,7 @@
+function do_alert(msg) {
+  $('#alert_text').text(msg);
+  $('#alert_box_div').show();
+}
 function build_employee_selection (input) {
   var emp_string =  '<div class="row ">';
   emp_string += '<div class="large-12 medium-12 small-12 columns left ">';
