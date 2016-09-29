@@ -1,0 +1,26 @@
+Rails:
+  Enabled: true
+
+Metrics/LineLength:
+  Max: 112
+
+Documentation:
+  Enabled: false
+
+HashSyntax:
+  Enabled: false
+
+SpaceInsideBlockBraces:
+  Enabled: false
+
+SpaceInsideHashLiteralBraces:
+  Enabled: false
+
+StringLiterals:
+  Enabled: false
+
+BlockComments:
+  Enabled: false
+
+NumericLiterals:
+  Enabled: false
