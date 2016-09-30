@@ -1,0 +1,30 @@
+.ldc_display_bold {
+  color: #000;
+  font-weight: bold;
+}
+.ldc_display {
+  color: #000;
+  font-weight: normal;
+}
+.ldc_display_heading {
+  border-bottom: 1px black solid;
+  font-weight: bold;
+  color: #000;
+  padding-bottom: .4rem;
+  margin-bottom: .5rem;
+  font-size: 0.875rem;
+}
+.emp_sel_pidm {
+  display: none;
+}
+div.select_box:hover {
+  background-color: #faf2c0;
+  box-shadow: 2px 2px 1px #888;
+}
+div.select_box {
+  border: 1px #a0a0a0 solid;
+  background-color: #f8f8f8;
+  padding: .25rem;
+  line-height: 1.25rem;
+  margin: .5rem;
+}
