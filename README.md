@@ -46,16 +46,6 @@ friends, and that you invoke javascript `foundation()` on your document:
 $(document).foundation();
 ```
 
-4) let plugin assets inform your application's layout page
-
-Put this line in your `<head>` tag (probably in `app/views/layouts/nd.html.erb`
-so the page-specific javascripts that aren't part of can be included before the rest of the page
-tries to use them on document load.
-
-```
-<%= yield(:header) if content_for? :header %>
-```
-
 I think that's all you need... good luck!
 
 --Kingdon
