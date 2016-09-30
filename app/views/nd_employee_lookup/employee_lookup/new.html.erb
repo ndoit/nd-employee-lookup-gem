@@ -57,11 +57,11 @@ $(document).ready(function() {
           <div id="employee_edit" class="ldc_right_col_content"  <% unless ff.nil? %>style="display:none; "<% end %>>
             <div id="employee_not_found" class="ldc_error" style="display:none;">An employee could not be found with the provided information.  Please check your entries and try again.</div>
             <div id="employee_invalid_entries" class="ldc_error" style="display:none;">Invalid entries.  You must provide part or all of the last name -OR- part or all of the net id.  First name is optional.</div>
-            <label>Last Name</label>
+            <%= label_tag :s_last_name, "Last Name" %>
             <%= text_field_tag(:s_last_name, nil, {:class => "execute_on_return"}) %>
-            <label>First Name</label>
+            <%= label_tag :s_first_name, "First Name" %>
             <%= text_field_tag(:s_first_name, nil, {:class => "execute_on_return"}) %>
-            <label>Net ID or ND ID</label>
+            <%= label_tag :s_net_id, "Net ID or ND ID" %>
             <%= text_field_tag(:s_net_id, nil, {:class => "execute_on_return"}) %>
             <div class="column left large-3 small-3"><%= link_to "Find", "javascript: void(0);", class: "button", id: "b_find_employee" %></div>
             <div class="column left large-1 small-1"><div id="find_employee_processing" >&nbsp;</div></div>
