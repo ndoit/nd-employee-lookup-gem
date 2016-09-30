@@ -1,3 +1,6 @@
+<% content_for :header do %>
+  <%= javascript_include_tag 'employee_lookup' %>
+<% end %>
 <script>
 var  refresh_new_amounts = false;
 function employee_search_url() { return '<%= employee_url(only_path: true) %>'; };
