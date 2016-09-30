@@ -62,7 +62,7 @@ function emp_lookup() {
   var fname = encodeURIComponent($('#s_first_name').val());
   var netid = encodeURIComponent($('#s_net_id').val());
 
-  var lookup_url = "/nd_employee_lookup/employee";
+  var lookup_url = employee_search_url();
   if (lname != "") {
     lookup_url = lookup_url + '/l/' + lname;
     if (fname != "")

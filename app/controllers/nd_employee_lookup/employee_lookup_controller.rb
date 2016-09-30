@@ -11,6 +11,8 @@ module NdEmployeeLookup
 
     protect_from_forgery with: :exception
 
+    include NdEmployeeLookup::Engine.routes.url_helpers
+
     def new
     end
 
