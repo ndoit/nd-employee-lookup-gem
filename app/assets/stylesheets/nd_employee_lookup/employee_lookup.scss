@@ -1,3 +1,19 @@
+div.ec-link {
+  height: 22px;
+  width: 22px;
+  background-repeat: no-repeat;
+  float: right;
+  display: none;
+}
+div.ec-link:hover {
+  cursor: pointer;
+}
+div.edit-content {
+  background-image: asset-data-url('nd_employee_lookup/pen_22x22.png');
+}
+div.close-content {
+  background-image: asset-data-url('nd_employee_lookup/x_22x22.png');
+}
 .ldc_display_bold {
   color: #000;
   font-weight: bold;
