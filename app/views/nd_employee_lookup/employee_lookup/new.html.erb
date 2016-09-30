@@ -4,6 +4,12 @@ function employee_search_url() { return '<%= employee_url(only_path: true) %>'; 
 
 $(document).ready(function() {
 
+  $('#b_find_employee').click( function() {
+    emp_lookup(); });
+  $('#edit_employee_button').click( function() {
+    change_employee(); });
+  $('#close_edit_employee_button').click( function() {
+    close_without_editing_employee(); });
 
    disableConfirmExit();
    $(document).on('submit','form',function(){

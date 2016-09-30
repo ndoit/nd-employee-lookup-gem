@@ -122,6 +122,25 @@ function disableConfirmExit() {
   });
 }
 
+function change_employee() {
+  $('#employee_not_found').hide();
+  $('#employee_invalid_entries').hide();
+  employee_section("edit");
+  $('#lu_date_row').hide();
+  $('#job_display_row').hide();
+  $('#job_ld_rows').hide();
+  $('#auth_users').hide();
+  $('#pay_data_not_found').hide();
+}
+function close_without_editing_employee() {
+  $('#employee_not_found').hide();
+  $('#employee_invalid_entries').hide();
+  $('#edit_employee_button').show();
+  $('#close_edit_employee_button').hide();
+  $('#employee_edit').hide();
+  $('#employee_row').css("margin-bottom", "0px");
+  $('#employee_display').show();
+}
 function emp_lookup() {
   var lname = encodeURIComponent($('#s_last_name').val());
   var fname = encodeURIComponent($('#s_first_name').val());
