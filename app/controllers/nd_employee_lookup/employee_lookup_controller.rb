@@ -38,6 +38,8 @@ module NdEmployeeLookup
           render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Invalid Parameters"}]')
         when OpenURI::HTTPError
           render :json => JSON.parse('[{ "Employee": "None", "employee_title": "No matching records"}]')
+        when Errno::ECONNREFUSED
+          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server endpoint refused the connection."}]')
         when SocketError
           render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Socket error"}]')
         when URI::InvalidURIError
