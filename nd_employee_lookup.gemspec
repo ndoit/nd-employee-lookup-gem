@@ -25,4 +25,7 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'factory_girl_rails', '~> 4.0'
   s.add_development_dependency 'webmock', '~> 2.1.0'
   s.add_development_dependency 'sqlite3', '~> 1.3.11'
+  s.add_development_dependency 'shoulda-matchers', '~> 3.1.1'
+  s.add_development_dependency 'cucumber-rails', '~> 1.4.4'
+  s.add_development_dependency 'selenium-webdriver', '~> 2.53.4'
 end
