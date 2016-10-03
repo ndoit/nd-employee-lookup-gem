@@ -5,7 +5,8 @@ WebMock.disable_net_connect!(allow_localhost: true)
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.before(:each) do
-    stub_request(:get, %r{api\.github\.com}).
+    hrpy_api_base = Regexp.escape(ENV['HRPY_API_BASE'])
+    stub_request(:get, %r{#{hrpy_api_base}}).
       with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
       to_return(status: 200, body: "stubbed response", headers: {})
   end
