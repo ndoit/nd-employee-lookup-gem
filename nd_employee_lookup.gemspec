@@ -21,4 +21,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'dotenv'
   s.add_development_dependency 'foundation-rails', '~> 5.3.1'
   s.add_development_dependency 'jquery-rails', '~> 4.2.1'
+  s.add_development_dependency 'rspec-rails', '~> 3.5.0'
+  s.add_development_dependency 'factory_girl_rails', '~> 4.0'
+  s.add_development_dependency 'webmock', '~> 2.1.0'
+  s.add_development_dependency 'sqlite3', '~> 1.3.11'
 end
