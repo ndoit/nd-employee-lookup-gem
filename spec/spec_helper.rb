@@ -1,14 +1,15 @@
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
 
+#Dir[File.dirname(__FILE__) + '/support/**/*.rb'].each {|f| require f }
+
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.before(:each) do
     hrpy_api_base = Regexp.escape(ENV['HRPY_API_BASE'])
-    stub_request(:get, %r{#{hrpy_api_base}}).
-      with(headers: {'Accept'=>'*/*', 'User-Agent'=>'Ruby'}).
-      to_return(status: 200, body: "stubbed response", headers: {})
+    stub_request(:any, %r{#{hrpy_api_base}}).
+      to_rack(FakeHrPy)
   end
 
   # rspec-expectations config goes here. You can use an alternate

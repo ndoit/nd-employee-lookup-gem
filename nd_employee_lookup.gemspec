@@ -28,4 +28,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'shoulda-matchers', '~> 3.1.1'
   s.add_development_dependency 'cucumber-rails', '~> 1.4.4'
   s.add_development_dependency 'selenium-webdriver', '~> 2.53.4'
+  s.add_development_dependency 'sinatra', '~> 1.4.7'
 end
