@@ -177,6 +177,9 @@ function emp_lookup() {
           if (data[0].Employee == "None") {
             $('#employee_not_found').show();
           }
+          else if (data[0].Employee == "Error") {
+            $('#employee_lookup_api_error').show();
+          }
           else display_employee( data[0]);
         }
         else {

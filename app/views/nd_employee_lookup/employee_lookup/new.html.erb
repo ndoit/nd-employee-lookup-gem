@@ -55,6 +55,7 @@ $(document).ready(function() {
         <div class="close-content ec-link" id="close_edit_employee_button" <% if ff.nil? %>style="display:none; "<% end %>>&nbsp;</div>
 
         <div id="employee_edit" class="ldc_right_col_content"  <% unless ff.nil? %>style="display:none; "<% end %>>
+          <div id="employee_lookup_api_error" class="ldc_error" style="display:none;">The API for employee lookup returned an error.  Please check your code.</div>
           <div id="employee_not_found" class="ldc_error" style="display:none;">An employee could not be found with the provided information.  Please check your entries and try again.</div>
           <div id="employee_invalid_entries" class="ldc_error" style="display:none;">Invalid entries.  You must provide part or all of the last name -OR- part or all of the net id.  First name is optional.</div>
           <%= label_tag :s_last_name, "Last Name" %>
