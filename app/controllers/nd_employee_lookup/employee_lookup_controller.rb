@@ -17,7 +17,7 @@ module NdEmployeeLookup
     end
 
     def search
-      begin
+      # begin
 
         clean_params = sanitize_params(params)
         lookup_url = "#{ENV['HRPY_API_BASE']}/employee/v1"
@@ -32,28 +32,28 @@ module NdEmployeeLookup
           render :json => search_results
         end
 
-      rescue => e
-        case e
-        when InvalidParams
-          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Invalid Parameters"}]')
-        when OpenURI::HTTPError
-          render :json => JSON.parse('[{ "Employee": "None", "employee_title": "No matching records"}]')
-        when SocketError
-          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Socket error"}]')
-        when URI::InvalidURIError
-          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Invalid URI"}]')
-        else
-          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "An unknown error has occurred"}]')
+      # rescue => e
+      #   case e
+      #   when InvalidParams
+      #     render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Invalid Parameters"}]')
+      #   when OpenURI::HTTPError
+      #     render :json => JSON.parse('[{ "Employee": "None", "employee_title": "No matching records"}]')
+      #   when SocketError
+      #     render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Socket error"}]')
+      #   when URI::InvalidURIError
+      #     render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Invalid URI"}]')
+      #   else
+      #     render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "An unknown error has occurred"}]')
 
-        end
+      #   end
 
-      rescue SystemCallError => e
-        if e === Errno::ECONNRESET
-          render :json => JSON.parse('[{ "Employee": "Error", "Employee_title": "Server not available"}]')
-        else
-          raise e
-        end
-      end
+      # rescue SystemCallError => e
+      #   if e === Errno::ECONNRESET
+      #     render :json => JSON.parse('[{ "Employee": "Error", "Employee_title": "Server not available"}]')
+      #   else
+      #     raise e
+      #   end
+      # end
     end
 
     private
