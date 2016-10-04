@@ -14,6 +14,11 @@ div.edit-content {
 div.close-content {
   background-image: asset-data-url('nd_employee_lookup/x_22x22.png');
 }
+.ldc_error {
+  color: red;
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+}
 .ldc_display_bold {
   color: #000;
   font-weight: bold;
