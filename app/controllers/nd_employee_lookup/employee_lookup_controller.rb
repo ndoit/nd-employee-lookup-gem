@@ -39,10 +39,12 @@ module NdEmployeeLookup
         when OpenURI::HTTPError
           render :json => JSON.parse('[{ "Employee": "None", "employee_title": "No matching records"}]')
         when Errno::ENOENT
-          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server endpoint refers to a file."}]')
+          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server endpoint refers to a file"}]')
           # Did you forget to set HRPY_API_BASE ?
         when Errno::ECONNREFUSED
-          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server endpoint refused the connection."}]')
+          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server endpoint refused the connection"}]')
+        when OpenSSL::SSL::SSLError
+          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Certificate verification error trying to reach the HRPY API"}]')
         when SocketError
           render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Socket error"}]')
         when URI::InvalidURIError
