@@ -7,3 +7,7 @@ NdEmployeeLookup::Engine.routes.draw do
   get 'employee/:status/:search_string' => 'employee_lookup#search'
   get 'employee/:search_string' => 'employee_lookup#search'
 end
+
+Rails.application.routes.draw do
+  mount NdEmployeeLookup::Engine, at: '/employee-lookup'
+end
