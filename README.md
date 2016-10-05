@@ -17,54 +17,37 @@ end
 
 then the NdEmployeeLookup::ApplicationController will be protected as well.
 
-2) a mount point, for example in `config/routes.rb`:
+2) styling and javascript assets from foundation
 
+Though not mandatory, it is strongly recommended that your app implements the
+`nd_foundation` layout, so you probably already have a `layout 'nd'` statement
+in your ApplicationController.  If not, you should follow the instructions at
+https://github.com/ndwebgroup/nd_foundation -- `foundation-rails` itself is
+required by the views, so make sure `app/assets/javascripts/application.js`
+requires `nd_employee_lookup`, and that you invoke javascript `foundation()`.
+This will also (automatically) require `jquery-rails` and load those assets.
+
+In `app/assets/javascripts/application.js`, for example:
 ```
-Rails.application.routes.draw do
-  mount NdEmployeeLookup::Engine, at: "/employee-lookup"
-end
-```
-
-If you add this route then you can access the view for `employee_lookup#new` at
-/employee-lookup/search, and you can read JSON results by sending get requests
-into the `employee_lookup#search` method directly via /employee-lookup/employee
-
-FIXME: there may be a way to handle this automatically from within the gem.
-
-3) styling and javascript assets from foundation
-
-It's expected that your app implements nd_foundation, so you probably have a
-`layout 'nd'` in the ApplicationController, or you've followed the instructions
-at https://github.com/ndwebgroup/nd_foundation and also advisable to make sure
-your `app/assets/javascripts/application.js` has the directives for jquery and
-friends, and that you invoke javascript `foundation()` on your document:
-
-```
-//= require jquery
-//= require jquery_ujs
-//= require turbolinks
-//= require foundation
+//= require nd_employee_lookup
 //= require_tree .
 $(document).foundation();
 ```
 
-The included AJAX-enabled views will almost certainly not work without taking
-care of this.
-
-4) make arrangements to load any assets in your &lt;head&gt;
-
-The engine precompiles some CSS and Javascript assets, but as it cannot be
-responsible for your app's layout, it won't be able to go back and add things
-to the `head` tag of a page after it's already been rendered.  So, this line
-inside of the `head` tag in `layouts/nd.html.erb` will let the engine provide
-them:
-
+and in `app/assets/stylesheets/application.css`:
 ```
-<%= yield(:header) if content_for? :header %>
+/*
+ *= require nd_employee_lookup
+ *= require nd_foundation
+ *= require foundation_overrides
+ *= require_self
+ *= require_tree .
+ */
 ```
 
-It will not be necessary to include any javascript or link stylesheets from
-within the gem by hand.
+By doing this, the engine will require needed foundation-rails and jquery-rails
+gems and assets that are included as dependencies of the gem.  Without them the
+layout and AJAX-enabled views would certainly not work.
 
 I think that's all you need... good luck!
 
