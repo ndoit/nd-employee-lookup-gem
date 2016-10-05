@@ -73,16 +73,16 @@ function build_employee_selection (input) {
   emp_string += '<span class="text_nw ldc_display_bold">Name: <span class="emp_sel_last">' + input.last_name + '</span>, <span class="emp_sel_first">' + input.first_name + '</span><span class="emp_sel_pidm">' + input.pidm + '</span></span>';
   emp_string += '</div></div>';
   emp_string += ' <div class="row ldc_display">';
-  emp_string += ' <div class="large-1 medium-1 small-3 columns left"><label class="text_nw">Net ID:</label></div>';
-  emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_net_id">' + input.net_id +'</span></div>';
-  emp_string += ' <div class="large-2 medium-2 small-3 columns left"><label class="text_nw">Home Orgn: </label></div>';
-  emp_string += ' <div class="large-6 medium-6 small-9 columns left"><span class="emp_sel_home_org">'+ input.home_orgn + '</span>, <span class="emp_sel_home_org_desc">' + input.home_orgn_desc + '</span></div>';
+  emp_string += ' <div class="large-2 medium-1 small-1 columns left"><label class="text_nw">Net ID:</label></div>';
+  emp_string += ' <div class="large-3 medium-3 small-3 columns left"><span class="emp_sel_net_id">' + input.net_id +'</span></div>';
+  emp_string += ' <div class="large-2 medium-2 small-2 columns left"><label class="text_nw">Home Orgn: </label></div>';
+  emp_string += ' <div class="large-5 medium-6 small-5 columns left"><span class="emp_sel_home_org">'+ input.home_orgn + '</span>, <span class="emp_sel_home_org_desc">' + input.home_orgn_desc + '</span></div>';
   emp_string += ' </div>';
   emp_string += ' <div class="row ldc_display">';
-  emp_string += ' <div class="large-1 medium-1 small-3 columns left"><label class="text_nw">ND ID:</label></div>';
-  emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_nd_id">' + input.nd_id + '</span></div>';
-  emp_string += ' <div class="large-2 medium-2 small-3 columns left"><label class="text_nw">Primary Title: </label></div>';
-  emp_string += ' <div class="large-6 medium-6 small-9 columns left"><span class="emp_sel_title">' + input.primary_title + '</span></div>';
+  emp_string += ' <div class="large-2 medium-1 small-1 columns left"><label class="text_nw">ND ID:</label></div>';
+  emp_string += ' <div class="large-3 medium-3 small-3 columns left"><span class="emp_sel_nd_id">' + input.nd_id + '</span></div>';
+  emp_string += ' <div class="large-2 medium-2 small-2 columns left"><label class="text_nw">Primary Title: </label></div>';
+  emp_string += ' <div class="large-5 medium-6 small-5 columns left"><span class="emp_sel_title">' + input.primary_title + '</span></div>';
   emp_string += ' </div>';
 
   $('#select_employee_list').append('<div class="select_box emp_sel_box" id="emp'+input.nd_id +'">' + emp_string + '</div>');
