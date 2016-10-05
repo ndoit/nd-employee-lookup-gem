@@ -46,6 +46,24 @@ friends, and that you invoke javascript `foundation()` on your document:
 $(document).foundation();
 ```
 
+The included AJAX-enabled views will almost certainly not work without taking
+care of this.
+
+4) make arrangements to load any assets in your &lt;head&gt;
+
+The engine precompiles some CSS and Javascript assets, but as it cannot be
+responsible for your app's layout, it won't be able to go back and add things
+to the `head` tag of a page after it's already been rendered.  So, this line
+inside of the `head` tag in `layouts/nd.html.erb` will let the engine provide
+them:
+
+```
+<%= yield(:header) if content_for? :header %>
+```
+
+It will not be necessary to include any javascript or link stylesheets from
+within the gem by hand.
+
 I think that's all you need... good luck!
 
 --Kingdon
