@@ -29,6 +29,8 @@ If you add this route then you can access the view for `employee_lookup#new` at
 /employee-lookup/search, and you can read JSON results by sending get requests
 into the `employee_lookup#search` method directly via /employee-lookup/employee
 
+FIXME: there may be a way to handle this automatically from within the gem.
+
 3) styling and javascript assets from foundation
 
 It's expected that your app implements nd_foundation, so you probably have a
