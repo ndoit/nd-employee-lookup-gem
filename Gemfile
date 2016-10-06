@@ -12,3 +12,5 @@ gemspec
 
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
+
+gem 'capybara-webkit', git: 'git@github.com:kingdonb/capybara-webkit.git'

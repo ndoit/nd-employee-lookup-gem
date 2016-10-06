@@ -1,3 +1,11 @@
+GIT
+  remote: git@github.com:kingdonb/capybara-webkit.git
+  revision: 464f57c9d228ec15ed021c5b6a6eb0c4c44b3b0d
+  specs:
+    capybara-webkit (1.11.1)
+      capybara (>= 2.3.0, < 2.8.0)
+      json
+
 PATH
   remote: .
   specs:
@@ -47,11 +55,17 @@ GEM
     addressable (2.4.0)
     arel (6.0.3)
     builder (3.2.2)
-    childprocess (0.5.9)
-      ffi (~> 1.0, >= 1.0.11)
+    capybara (2.7.1)
+      addressable
+      mime-types (>= 1.16)
+      nokogiri (>= 1.3.3)
+      rack (>= 1.0.0)
+      rack-test (>= 0.5.4)
+      xpath (~> 2.0)
     concurrent-ruby (1.0.2)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
+    database_cleaner (1.5.3)
     diff-lcs (1.2.5)
     dotenv (2.0.1)
     erubis (2.7.0)
@@ -60,7 +74,6 @@ GEM
     factory_girl_rails (4.7.0)
       factory_girl (~> 4.7.0)
       railties (>= 3.0.0)
-    ffi (1.9.14)
     foundation-rails (5.4.3.2)
       railties (>= 3.1.0)
       sass (>= 3.2.0)
@@ -133,13 +146,8 @@ GEM
       rspec-mocks (~> 3.5.0)
       rspec-support (~> 3.5.0)
     rspec-support (3.5.0)
-    rubyzip (1.2.0)
     safe_yaml (1.0.4)
     sass (3.4.22)
-    selenium-webdriver (2.53.4)
-      childprocess (~> 0.5)
-      rubyzip (~> 1.0)
-      websocket (~> 1.0)
     shoulda-matchers (3.1.1)
       activesupport (>= 4.0.0)
     sinatra (1.4.7)
@@ -163,17 +171,20 @@ GEM
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
       hashdiff
-    websocket (1.2.3)
+    xpath (2.0.0)
+      nokogiri (~> 1.3)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
+  capybara (~> 2.7.1)
+  capybara-webkit!
+  database_cleaner
   dotenv
   factory_girl_rails (~> 4.0)
   nd_employee_lookup!
   rspec-rails (~> 3.5.0)
-  selenium-webdriver (~> 2.53.4)
   shoulda-matchers (~> 3.1.1)
   sinatra (~> 1.4.7)
   sqlite3 (~> 1.3.11)
