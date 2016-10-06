@@ -1,6 +1,8 @@
 require 'support/fake_hr_py'
 
 feature 'JavaScript search controller' do
+  ## FIXME: https://gist.github.com/gkop/1371962
+  # (have_errors does not work with selenium-webdriver)
   ## FIXME: We should really check for JS errors after every JS test
   it 'should not have JavaScript errors', js: true do
     visit '/employee-lookup/search'
