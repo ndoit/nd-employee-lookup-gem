@@ -26,6 +26,8 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'webmock', '~> 2.1.0'
   s.add_development_dependency 'sqlite3', '~> 1.3.11'
   s.add_development_dependency 'shoulda-matchers', '~> 3.1.1'
-  s.add_development_dependency 'selenium-webdriver', '~> 2.53.4'
   s.add_development_dependency 'sinatra', '~> 1.4.7'
+  s.add_development_dependency 'capybara', '~> 2.7.1'
+  # s.add_development_dependency 'capybara-webkit', '~> 1.11.1'
+  s.add_development_dependency 'database_cleaner'
 end
