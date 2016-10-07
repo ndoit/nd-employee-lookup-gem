@@ -37,7 +37,8 @@ module NdEmployeeLookup
         when InvalidParams
           render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Invalid Parameters"}]')
         when OpenURI::HTTPError
-          render :json => JSON.parse('[{ "Employee": "None", "employee_title": "No matching records"}]')
+          render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server denied the API request"}]')
+          # Does your HRPY_API_KEY exist and have the right permissions?
         when Errno::ENOENT
           render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server endpoint refers to a file"}]')
           # Did you forget to set HRPY_API_BASE ?
