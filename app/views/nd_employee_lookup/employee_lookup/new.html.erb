@@ -41,7 +41,7 @@ $(document).ready(function() {
 </script>
 <div class="row">
   <div class="large-12 medium-12 small-12">
-    <h1>New Employee Lookup</h1>
+    <h1>Employee Lookup</h1>
   </div>
 </div>
 
@@ -56,12 +56,12 @@ $(document).ready(function() {
         <div id="employee_edit" class="ldc_right_col_content"  <% unless ff.nil? %>style="display:none; "<% end %>>
           <div id="employee_lookup_api_error" class="ldc_error" style="display:none;">The API for employee lookup returned an error.  Please check your code.</div>
           <div id="employee_not_found" class="ldc_error" style="display:none;">An employee could not be found with the provided information.  Please check your entries and try again.</div>
-          <div id="employee_invalid_entries" class="ldc_error" style="display:none;">Invalid entries.  You must provide part or all of the last name -OR- part or all of the net id.  First name is optional.</div>
+          <div id="employee_invalid_entries" class="ldc_error" style="display:none;">Invalid entries.  You must provide part or all of the last name -OR- part or all of the NetID.  First name is optional.</div>
           <%= label_tag :s_last_name, "Last Name" %>
           <%= text_field_tag(:s_last_name, nil, {:class => "execute_on_return"}) %>
           <%= label_tag :s_first_name, "First Name" %>
           <%= text_field_tag(:s_first_name, nil, {:class => "execute_on_return"}) %>
-          <%= label_tag :s_net_id, "Net ID or ND ID" %>
+          <%= label_tag :s_net_id, "NetID or ndID" %>
           <%= text_field_tag(:s_net_id, nil, {:class => "execute_on_return"}) %>
           <div class="column left large-3 small-3"><%= link_to "Find", "javascript: void(0);", class: "button", id: "b_find_employee" %></div>
           <div class="column left large-1 small-1"><div id="find_employee_processing" >&nbsp;</div></div>
@@ -72,14 +72,14 @@ $(document).ready(function() {
             <div class="large-12 medium-12 small-12 columns left "><div class="ldc_display_heading"><span class="text_nw ldc_display_bold">Name: </span><span id="employee_name"></span></div></div>
           </div>
           <div class="row ldc_display">
-            <div class="large-1 medium-1 small-3 columns left"><label class="text_nw">Net ID:</label></div>
+            <div class="large-1 medium-1 small-3 columns left"><label class="text_nw">NetID:</label></div>
             <div class="large-3 medium-3 small-9 columns left"><span id="employee_net_id">&nbsp;</span></div>
             <div class="large-2 medium-2 small-3 columns left"><label class="text_nw">Home Orgn: </label></div>
             <div class="large-6 medium-6 small-9 columns left"><span id="employee_home_org">&nbsp;</span></div>
 
           </div>
           <div class="row ldc_display">
-            <div class="large-1 medium-1 small-3 columns left"><label class="text_nw">ND ID:</label></div>
+            <div class="large-1 medium-1 small-3 columns left"><label class="text_nw">ndID:</label></div>
             <div class="large-3 medium-3 small-9 columns left"><span id="employee_nd_id">&nbsp;</span></div>
             <div class="large-2 medium-2 small-3 columns left"><label class="text_nw">Primary Title: </label></div>
             <div class="large-6 medium-6 small-9 columns left"><span id="employee_title">&nbsp;</span></div>
