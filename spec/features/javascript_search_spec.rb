@@ -27,4 +27,12 @@ feature 'JavaScript search controller' do
     expect(results).to have_selector('.emp_sel_box', visible: true)
     expect(page.all('.emp_sel_box').count).to eq 2
   end
+  it 'should return an exact match when NetID has an exact match', js: true do
+    visit '/employee-lookup/search'
+    fill_in 's_net_id', with: 'tmeyer2'
+    find('#b_find_employee').click
+
+    name = page.find 'span#employee_name'
+    expect(name.text).to match(/^Meyer, Teresa$/)
+  end
 end
