@@ -6,7 +6,21 @@ module NdEmployeeLookup
 
     def self.find_by(*args)
       raise InvalidLookup if args[0].keys == [:first_name]
-      search(args[0])
+      search_results = JSON.parse(search(args[0]))
+      r = []
+      if search_results.empty?
+        r
+      else
+        search_results.each do |e|
+          h = HrpyEmployeePerson.new
+          h.first_name = e['first_name']
+          h.last_name = e['last_name']
+          h.net_id = e['net_id']
+          h.nd_id = e['nd_id']
+          r << h
+        end
+        r
+      end
     end
 
     def save
@@ -26,26 +40,10 @@ module NdEmployeeLookup
       #
     end
 
-    private
-
     def self.search(params)
       clean_params = sanitize_params(params)
       url_open = open lookup_url_from_params(clean_params)
-      search_results = JSON.parse(url_open.read)
-      r = []
-      if search_results.empty?
-        r
-      else
-        search_results.each do |e|
-          h = HrpyEmployeePerson.new
-          h.first_name = e['first_name']
-          h.last_name = e['last_name']
-          h.net_id = e['net_id']
-          h.nd_id = e['nd_id']
-          r << h
-        end
-        r
-      end
+      url_open.read
     end
 
     def self.sanitize_params(params)
