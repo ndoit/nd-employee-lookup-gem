@@ -31,7 +31,9 @@ In `app/assets/javascripts/application.js`, for example:
 ```
 //= require nd_employee_lookup
 //= require_tree .
-$(document).foundation();
+$(function(){
+  $(document).foundation();
+    });
 ```
 and in `app/assets/stylesheets/application.css`:
 ```
