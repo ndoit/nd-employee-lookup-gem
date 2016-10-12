@@ -37,5 +37,11 @@ module NdEmployeeLookup
       expect(res.count).to be >= 10
       expect(res.first).to be_instance_of(HrpyEmployeePerson)
     end
+
+    it "finds users by partial net_id" do
+      res = HrpyEmployeePerson.find_by user_id: 'tmeyer'
+      expect(res.count).to eq 2
+      expect(res.first).to be_instance_of(HrpyEmployeePerson)
+    end
   end
 end
