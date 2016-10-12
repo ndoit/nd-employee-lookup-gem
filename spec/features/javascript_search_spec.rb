@@ -27,7 +27,4 @@ feature 'JavaScript search controller' do
     expect(results).to have_selector('.emp_sel_box', visible: true)
     expect(page.all('.emp_sel_box').count).to eq 2
   end
-  it 'should deliver the form using a partial' do
-    pending 'the form is currently delivered as a single-page application'
-  end
 end
