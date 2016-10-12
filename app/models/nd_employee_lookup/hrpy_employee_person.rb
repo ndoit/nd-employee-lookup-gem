@@ -8,9 +8,7 @@ module NdEmployeeLookup
       raise InvalidLookup if args[0].keys == [:first_name]
       search_results = JSON.parse(search(args[0]))
       r = []
-      if search_results.empty?
-        r
-      else
+      unless search_results.empty?
         search_results.each do |e|
           h = HrpyEmployeePerson.new
           h.first_name = e['first_name']
@@ -19,8 +17,8 @@ module NdEmployeeLookup
           h.nd_id = e['nd_id']
           r << h
         end
-        r
       end
+      r
     end
 
     def save
@@ -84,25 +82,18 @@ module NdEmployeeLookup
     def self.lookup_url_from_params(clean_params)
       lookup_url = "#{ENV['HRPY_API_BASE']}/employee/v1"
       lookup_url += query_string(clean_params)
-      lookup_url += "?api_key=#{ENV['HRPY_API_KEY']}"
+      lookup_url + "?api_key=#{ENV['HRPY_API_KEY']}"
     end
 
     def self.query_string(params)
       qs = ""
-      if params.key?(:status)
-        qs += "/" + params[:status]
-      end
-
-      if params.key?(:last_name)
-        qs += "/l/" + URI.encode(params[:last_name])
-      end
-      if params.key?(:first_name)
-        qs += "/" + URI.encode(params[:first_name])
-      end
-      if params.key?(:search_string)
-        qs += "/" + URI.encode(params[:search_string])
-      end
+      qs += "/" + params[:status] if params.key?(:status)
+      qs += "/l/" + URI.encode(params[:last_name]) if params.key?(:last_name)
+      qs += "/" + URI.encode(params[:first_name]) if params.key?(:first_name)
+      qs += "/" + URI.encode(params[:search_string]) if params.key?(:search_string)
       qs
     end
+
+    private_class_method :sanitize_params, :lookup_url_from_params, :query_string
   end
 end
