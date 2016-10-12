@@ -9,9 +9,9 @@ class FakeHrPy < Sinatra::Base
     lname = params['last_name']
     fname = params['first_name']
 
-    if fname == "T"
+    if /T/i =~ fname && /Meyer/i =~ lname
       json_response 200, 'employees.json'
-    elsif fname == "Teresa"
+    elsif /Teresa/i =~ fname && /Meyer/i =~ lname
       json_response 200, 'employee.json'
     end
   end

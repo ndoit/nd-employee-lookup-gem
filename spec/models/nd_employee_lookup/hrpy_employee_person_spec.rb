@@ -25,5 +25,11 @@ module NdEmployeeLookup
       expect(person.first_name).to eql "James"
       expect(person.last_name).to eql "Bracke"
     end
+
+    it "finds users by last name and first name" do
+      res = HrpyEmployeePerson.find_by last_name: 'meyer', first_name: 't'
+      expect(res.count).to eq 2
+      expect(res.first).to be_instance_of(HrpyEmployeePerson)
+    end
   end
 end
