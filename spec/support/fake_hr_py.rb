@@ -21,6 +21,8 @@ class FakeHrPy < Sinatra::Base
 
     if user_id == 'tmeyer2'
       json_response 200, 'employee.json'
+    elsif user_id == '900197659'
+      json_response 200, 'jbracke3.json'
     end
   end
 
