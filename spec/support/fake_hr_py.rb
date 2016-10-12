@@ -16,6 +16,14 @@ class FakeHrPy < Sinatra::Base
     end
   end
 
+  get '/employee/v1/l/:last_name' do
+    lname = params['last_name']
+
+    if /Meyer/i =~ lname
+      json_response 200, 'employeeeeees.json'
+    end
+  end
+
   get '/employee/v1/:search_string' do
     user_id = params['search_string']
 
