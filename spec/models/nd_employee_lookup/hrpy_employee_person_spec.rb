@@ -7,5 +7,14 @@ module NdEmployeeLookup
         HrpyEmployeePerson.find_by first_name: 'teresa'
       end.to raise_error(NdEmployeeLookup::InvalidLookup)
     end
+
+    it "finds a user by net_id" do
+      res = HrpyEmployeePerson.find_by user_id: 'tmeyer2'
+      expect(res.count).to eq 1
+      expect(res.first).to be_instance_of(HrpyEmployeePerson)
+      person = res.first
+      expect(person.first_name).to eql "Teresa"
+      expect(person.last_name).to eql "Meyer"
+    end
   end
 end

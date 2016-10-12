@@ -16,6 +16,14 @@ class FakeHrPy < Sinatra::Base
     end
   end
 
+  get '/employee/v1/:search_string' do
+    user_id = params['search_string']
+
+    if user_id == 'tmeyer2'
+      json_response 200, 'employee.json'
+    end
+  end
+
   private
 
   def json_response(response_code, file_name)
