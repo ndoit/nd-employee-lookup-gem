@@ -67,9 +67,9 @@ module NdEmployeeLookup
           raise InvalidParams
         end
       end
-      if params.key?(:user_id)
-        if params[:user_id] =~ /[a-zA-Z0-9]/
-          cparams[:search_string] = params[:user_id]
+      if params.key?(:employee_id)
+        if params[:employee_id] =~ /[a-zA-Z0-9]/
+          cparams[:search_string] = params[:employee_id]
         else
           raise InvalidParams
         end

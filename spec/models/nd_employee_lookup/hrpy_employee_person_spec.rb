@@ -7,7 +7,7 @@ module NdEmployeeLookup
     end
 
     it "finds a user by net_id" do
-      res = HrpyEmployeePerson.find_by user_id: 'tmeyer2'
+      res = HrpyEmployeePerson.find_by employee_id: 'tmeyer2'
       expect(res.count).to eq 1
       expect(res.first).to be_instance_of(HrpyEmployeePerson)
       person = res.first
@@ -16,7 +16,7 @@ module NdEmployeeLookup
     end
 
     it "finds a user by nd_id" do
-      res = HrpyEmployeePerson.find_by user_id: '900197659'
+      res = HrpyEmployeePerson.find_by employee_id: '900197659'
       expect(res.count).to eq 1
       expect(res.first).to be_instance_of(HrpyEmployeePerson)
       person = res.first
@@ -37,7 +37,7 @@ module NdEmployeeLookup
     end
 
     it "finds users by partial net_id" do
-      res = HrpyEmployeePerson.find_by user_id: 'tmeyer'
+      res = HrpyEmployeePerson.find_by employee_id: 'tmeyer'
       expect(res.count).to eq 2
       expect(res.first).to be_instance_of(HrpyEmployeePerson)
     end

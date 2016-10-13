@@ -4,8 +4,8 @@ NdEmployeeLookup::Engine.routes.draw do
   get 'employee' => 'employee_lookup#search'
   get 'employee/l/:last_name(/:first_name)' => 'employee_lookup#search', constraints: { :last_name => /[^\/]+/, :first_name => /[^\/]+/ }
   get 'employee/:status/l/:last_name(/:first_name)' => 'employee_lookup#search', constraints: { :last_name => /[^\/]+/, :first_name => /[^\/]+/ }
-  get 'employee/:status/:user_id' => 'employee_lookup#search'
-  get 'employee/:user_id' => 'employee_lookup#search'
+  get 'employee/:status/:employee_id' => 'employee_lookup#search'
+  get 'employee/:employee_id' => 'employee_lookup#search'
 end
 
 Rails.application.routes.draw do

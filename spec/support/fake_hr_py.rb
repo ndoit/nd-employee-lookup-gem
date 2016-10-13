@@ -25,13 +25,13 @@ class FakeHrPy < Sinatra::Base
   end
 
   get '/employee/v1/:search_string' do
-    user_id = params['search_string']
+    employee_id = params['search_string']
 
-    if user_id == 'tmeyer2'
+    if employee_id == 'tmeyer2'
       json_response 200, 'employee.json'
-    elsif user_id == 'tmeyer'
+    elsif employee_id == 'tmeyer'
       json_response 200, 'employees.json'
-    elsif user_id == '900197659'
+    elsif employee_id == '900197659'
       json_response 200, 'jbracke3.json'
     end
   end
