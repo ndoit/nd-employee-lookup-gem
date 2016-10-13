@@ -27,8 +27,8 @@ feature 'JavaScript search controller' do
   end
   it 'should return an exact match when NetID has an exact match', js: true do
     visit '/employee-lookup/search'
-    fill_in 's_net_id', with: 'tmeyer2'
-    find('#b_find_employee').click
+    fill_in 'nd_employee_lookup_net_id', with: 'tmeyer2'
+    find('#b_nd_employee_lookup_find').click
 
     name = page.find 'span#employee_name'
     expect(name.text).to match(/^Meyer, Teresa$/)

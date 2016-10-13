@@ -5,7 +5,8 @@ module NdEmployeeLookup
 
     config.assets.paths << File.expand_path("../../assets/stylesheets", __FILE__)
     config.assets.paths << File.expand_path("../../assets/javascripts", __FILE__)
-    config.assets.precompile += %w( nd_employee_lookup/employee_lookup.js nd_employee_lookup/employee_lookup.css )
+    config.assets.precompile += %w( nd_employee_lookup/employee_lookup.js nd_employee_lookup/employee_lookup.css
+                                    nd_employee_lookup/employee_lookup_full.js )
 
     config.generators do |g|
       g.test_framework :rspec
