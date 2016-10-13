@@ -14,26 +14,11 @@ div.edit-content {
 div.close-content {
   background-image: asset-data-url('nd_employee_lookup/x_22x22.png');
 }
-.ldc_error {
-  color: red;
-  margin-top: .5rem;
-  margin-bottom: .5rem;
-}
-.ldc_display_bold {
-  color: #000;
-  font-weight: bold;
-}
-.ldc_display {
-  color: #000;
-  font-weight: normal;
-}
-.ldc_display_heading {
+
+.border-bottom {
   border-bottom: 1px black solid;
-  font-weight: bold;
-  color: #000;
   padding-bottom: .4rem;
   margin-bottom: .5rem;
-  font-size: 0.875rem;
 }
 .emp_sel_pidm {
   display: none;

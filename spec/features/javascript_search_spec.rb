@@ -8,20 +8,20 @@ feature 'JavaScript search controller' do
   end
   it 'should answer a specific query with a single result', js: true do
     visit '/employee-lookup/search'
-    fill_in 's_last_name', with: 'Meyer'
-    fill_in 's_first_name', with: 'Teresa'
-    find('#b_find_employee').click
+    fill_in 'nd_employee_lookup_last_name', with: 'Meyer'
+    fill_in 'nd_employee_lookup_first_name', with: 'Teresa'
+    find('#b_nd_employee_lookup_find').click
 
     name = page.find 'span#employee_name'
     expect(name.text).to match(/^Meyer, Teresa$/)
   end
   it 'should answer a less specific query with a list', js: true do
     visit '/employee-lookup/search'
-    fill_in 's_last_name', with: 'Meyer'
-    fill_in 's_first_name', with: 'T'
-    find('#b_find_employee').click
+    fill_in 'nd_employee_lookup_last_name', with: 'Meyer'
+    fill_in 'nd_employee_lookup_first_name', with: 'T'
+    find('#b_nd_employee_lookup_find').click
 
-    results = page.find 'div#select_employee_list'
+    results = page.find 'div#nd_employee_lookup_select_employee_list'
     expect(results).to have_selector('.emp_sel_box', visible: true)
     expect(page.all('.emp_sel_box').count).to eq 2
   end
