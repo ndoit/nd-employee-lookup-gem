@@ -57,8 +57,12 @@ function nd_employee_lookup_find() {
   var lname = encodeURIComponent($('#nd_employee_lookup_last_name').val());
   var fname = encodeURIComponent($('#nd_employee_lookup_first_name').val());
   var netid = encodeURIComponent($('#nd_employee_lookup_net_id').val());
+  var state = encodeURIComponent($('#nd_employee_lookup_status').val());
 
   var lookup_url = '/employee-lookup/employee';
+  if (state != "") {
+    lookup_url = lookup_url + '/' + state;
+  }
   if (netid != "") {
     lookup_url = lookup_url + '/' + netid;
   }
