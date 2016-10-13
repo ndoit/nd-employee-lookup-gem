@@ -3,6 +3,8 @@
 
               $('#b_nd_employee_lookup_find').click( function() {
                 nd_employee_lookup_find(); });
+              $('.execute_on_return').keypress( function( event) { doActionOnReturn( event, this.id); });
+
             });
           </script>
           <div data-alert class="alert-box warning" id="nd_employee_lookup_alert_box_div" style="display:none;">
