@@ -15,23 +15,23 @@
           <div class="row" id="name_row">
             <div class="large-6 medium-6 small-12 columns">
             <%= label_tag :nd_employee_lookup_last_name, "Last Name" %>
-            <%= text_field_tag(:nd_employee_lookup_last_name, nil, {:class => "execute_on_return"}) %>
+            <%= text_field_tag(:nd_employee_lookup_last_name, nil, {:class => "execute_on_return", :autofocus => true, :tabindex => 1}) %>
             </div>
             <div class="large-6 medium-6 small-12 columns">
             <%= label_tag :nd_employee_lookup_first_name, "First Name" %>
-            <%= text_field_tag(:nd_employee_lookup_first_name, nil, {:class => "execute_on_return"}) %>
+            <%= text_field_tag(:nd_employee_lookup_first_name, nil, {:class => "execute_on_return", :tabindex => 3}) %>
             </div>
           </div>
           <div class="row" >
             <div class="large-6 medium-6 small-12 columns">
             <%= label_tag :nd_employee_lookup_net_id, "NetID or ndID" %>
-            <%= text_field_tag(:nd_employee_lookup_net_id, nil, {:class => "execute_on_return"}) %>
+            <%= text_field_tag(:nd_employee_lookup_net_id, nil, {:class => "execute_on_return", :tabindex => 2}) %>
             </div>
           </div>
           <div class="row">
 
             <div class="column left large-3 small-3"><%= link_to "Find", "javascript: void(0);", class: "button", id: "b_nd_employee_lookup_find" %>
-            
+
             </div>
             <div class="column left large-1 small-1">
               <div id="nd_employee_lookup_find_employee_processing" >&nbsp;
@@ -45,4 +45,4 @@
             <div id="nd_employee_lookup_select_employee_list">
             </div>
             <a class="close-reveal-modal">&#215;</a>
-          </div>          
+          </div>
