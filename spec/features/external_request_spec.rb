@@ -1,5 +1,3 @@
-require 'support/fake_hr_py'
-
 feature 'External request' do
   it 'queries HRPY API for a single employee' do
     uri = URI("#{ENV['HRPY_API_BASE']}/employee/v1/l/Meyer/Teresa")

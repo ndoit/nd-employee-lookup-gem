@@ -1,3 +1,4 @@
+require 'support/fake_hr_py'
 require 'webmock/rspec'
 WebMock.disable_net_connect!(allow_localhost: true)
 

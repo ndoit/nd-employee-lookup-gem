@@ -1,5 +1,3 @@
-require 'support/fake_hr_py'
-
 feature 'JavaScript search controller' do
   ## FIXME: https://gist.github.com/gkop/1371962
   # (have_errors does not work with selenium-webdriver)
