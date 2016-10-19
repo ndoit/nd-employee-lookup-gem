@@ -25,7 +25,7 @@ function nd_employee_lookup_build_employee_selection (input) {
   emp_string += '</div></div>';
   emp_string += ' <div class="row">';
   emp_string += ' <div class="large-2 medium-1 small-3 columns left"><label>NetID:</label></div>';
-  emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_net_id">' + input.net_id +'</span></div>';
+  emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_net_id">' + input.net_id || '(No NetID)' +'</span></div>';
   emp_string += ' <div class="large-2 medium-2 small-3 columns left"><label>Home Orgn: </label></div>';
   emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_home_org">'+ input.home_orgn + '</span>, <span class="emp_sel_home_org_desc">' + input.home_orgn_desc + '</span></div>';
   emp_string += ' </div>';
@@ -33,7 +33,11 @@ function nd_employee_lookup_build_employee_selection (input) {
   emp_string += ' <div class="large-2 medium-1 small-3 columns left"><label>ndID:</label></div>';
   emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_nd_id">' + input.nd_id + '</span></div>';
   emp_string += ' <div class="large-2 medium-2 small-3 columns left"><label>Primary Title: </label></div>';
-  emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_title">' + input.primary_title + '</span></div>';
+  if(only_show_active_primary_title) {
+    emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_title">' + input.active_primary_title || '(No Active Job)' + '</span></div>';
+  } else {
+    emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_title">' + input.primary_title + '</span></div>';
+  }
   emp_string += ' </div>';
 
   $('#nd_employee_lookup_select_employee_list').append('<div class="select_box emp_sel_box" id="emp'+input.nd_id +'">' + emp_string + '</div>');

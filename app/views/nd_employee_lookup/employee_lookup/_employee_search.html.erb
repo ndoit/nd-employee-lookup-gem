@@ -1,4 +1,7 @@
           <script type="text/javascript">
+          <% if local_assigns[:status] == "active-incnew" %>
+            only_show_active_primary_title = true; <% else %>
+            only_show_active_primary_title = false; <% end %>
             $(document).ready(function() {
 
               $('#b_nd_employee_lookup_find').click( function() {
