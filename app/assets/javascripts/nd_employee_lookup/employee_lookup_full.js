@@ -13,6 +13,8 @@ function employee_section(mode,input) {
       $('#first_name_input').val(input.first_name);
       $('#home_orgn_input').val(input.home_orgn);
       $('#home_orgn_desc_input').val(input.home_orgn_desc);
+      // FIXME: ??? is this code still used anywhere at all...
+      $('#active_primary_title_input').val(input.active_primary_title);
       $('#primary_title_input').val(input.primary_title);
     }
     $('#employee_edit').hide();
