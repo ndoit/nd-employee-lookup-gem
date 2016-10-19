@@ -47,7 +47,10 @@ module NdEmployeeLookup
     def self.sanitize_params(params)
       cparams = {}
       if params.key?(:status)
-        if params[:status] == "active"
+        case params[:status]
+        when "active-incnew"
+          cparams[:status] = "active-incnew"
+        when "active"
           cparams[:status] = "active"
         else
           raise InvalidParams
