@@ -26,7 +26,7 @@ function nd_employee_lookup_build_employee_selection (input) {
   emp_string += '</div></div>';
   emp_string += ' <div class="row">';
   emp_string += ' <div class="large-2 medium-1 small-3 columns left"><label>NetID:</label></div>';
-  emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_net_id">' + (input.net_id || '(No NetID)') +'</span></div>';
+  emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_net_id">' + (input.net_id || '') +'</span>' + (input.net_id ? '' : '(No NetID)') + '</div>';
   emp_string += ' <div class="large-2 medium-2 small-3 columns left"><label>Home Orgn: </label></div>';
   emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_home_org">'+ input.home_orgn + '</span>, <span class="emp_sel_home_org_desc">' + input.home_orgn_desc + '</span></div>';
   emp_string += ' </div>';
