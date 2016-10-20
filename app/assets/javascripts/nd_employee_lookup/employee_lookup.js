@@ -10,6 +10,7 @@ function nd_employee_lookup_set_employee_input ( emp_sel_box) {
   emp_array.home_orgn_desc = $('#'+emp_sel_box).find('span.emp_sel_home_org_desc').text();
   emp_array.nd_id = $('#'+emp_sel_box).find('span.emp_sel_nd_id').text();
   emp_array.primary_title = $('#'+emp_sel_box).find('span.emp_sel_title').text();
+  emp_array.active_primary_title = $('#'+emp_sel_box).find('span.emp_sel_title').text();
   return emp_array;
 }
 
