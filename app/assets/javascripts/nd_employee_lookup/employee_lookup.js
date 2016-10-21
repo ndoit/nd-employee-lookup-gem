@@ -35,7 +35,7 @@ function nd_employee_lookup_build_employee_selection (input) {
   emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_nd_id">' + input.nd_id + '</span></div>';
   emp_string += ' <div class="large-2 medium-2 small-3 columns left"><label>Primary Title: </label></div>';
   if(only_show_active_primary_title) {
-    emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_title">' + (input.active_primary_title ? input.active_primary_title : '') + '</span>' + (input.active_primary_title ? '' : '(No Primary Job)') + '</div>';
+    emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_title">' + (input.active_primary_title ? input.active_primary_title : '') + '</span></div>';
   } else {
     emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_title">' + input.primary_title + '</span></div>';
   }
