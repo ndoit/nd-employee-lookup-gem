@@ -1,6 +1,3 @@
-require 'rails_helper'
-require 'support/fake_hr_py'
-
 describe NdEmployeeLookup::EmployeeLookupController do
   render_views
   routes { NdEmployeeLookup::Engine.routes }
