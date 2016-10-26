@@ -21,20 +21,7 @@ $(document).ready(function() {
   <!-- end partial -->
 </div>
 
-<div id="employee_display"  style="display:none; ">
-  <div class="row">
-    <div class="large-12 medium-12 small-12 columns left "><div class="border-bottom"><strong><span >Name: </span><span id="employee_name"></span></strong></div></div>
-  </div>
-  <div class="row">
-    <div class="large-1 medium-1 small-3 columns left"><label>NetID:</label></div>
-    <div class="large-3 medium-3 small-9 columns left"><span id="employee_net_id">&nbsp;</span></div>
-    <div class="large-2 medium-2 small-3 columns left"><label>Home Orgn: </label></div>
-    <div class="large-6 medium-6 small-9 columns left"><span id="employee_home_org">&nbsp;</span></div>
-  </div>
-  <div class="row">
-    <div class="large-1 medium-1 small-3 columns left"><label>ndID:</label></div>
-    <div class="large-3 medium-3 small-9 columns left"><span id="employee_nd_id">&nbsp;</span></div>
-    <div class="large-2 medium-2 small-3 columns left"><label>Primary Title: </label></div>
-    <div class="large-6 medium-6 small-9 columns left"><span id="employee_title">&nbsp;</span></div>
-  </div>
-</div>
+<%= render partial: 'nd_employee_lookup/hidden_employee_form', locals: {
+  employee: {},
+  submit_to: employees_path,
+  form_id: 'employee_lookup' } %>
