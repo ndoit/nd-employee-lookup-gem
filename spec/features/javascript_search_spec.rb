@@ -3,6 +3,7 @@ feature 'JavaScript search controller' do
   # (have_errors does not work with selenium-webdriver)
   ## FIXME: We should really check for JS errors after every JS test
   it 'should not have JavaScript errors', js: true do
+    #
     visit '/employee-lookup/search'
     expect(page).not_to have_errors
   end
@@ -16,6 +17,7 @@ feature 'JavaScript search controller' do
     expect(name.text).to match(/^Meyer, Teresa$/)
   end
   it 'should answer a less specific query with a list', js: true do
+    #
     visit '/employee-lookup/search'
     fill_in 'nd_employee_lookup_last_name', with: 'Meyer'
     fill_in 'nd_employee_lookup_first_name', with: 'T'
