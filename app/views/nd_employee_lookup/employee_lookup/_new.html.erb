@@ -17,7 +17,7 @@ $(document).ready(function() {
 
 <div class="row" id="employee_edit">
   <!-- begin partial -->
-  <%= render 'nd_employee_lookup/employee_lookup/employee_search' %>
+  <%= render partial: 'nd_employee_lookup/employee_lookup/employee_search', locals: { status: status } %>
   <!-- end partial -->
 </div>
 
