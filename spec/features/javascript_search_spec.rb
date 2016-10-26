@@ -14,7 +14,7 @@ feature 'JavaScript search controller' do
     find('#b_nd_employee_lookup_find').click
 
     name = page.find 'span#employee_name'
-    expect(name.text).to match(/^Meyer, Teresa$/)
+    expect(name.text).to match(/^Teresa Meyer$/)
   end
   it 'should answer a less specific query with a list', js: true do
     #
@@ -33,6 +33,6 @@ feature 'JavaScript search controller' do
     find('#b_nd_employee_lookup_find').click
 
     name = page.find 'span#employee_name'
-    expect(name.text).to match(/^Meyer, Teresa$/)
+    expect(name.text).to match(/^Teresa Meyer$/)
   end
 end
