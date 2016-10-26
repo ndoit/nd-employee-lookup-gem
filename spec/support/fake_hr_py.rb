@@ -5,7 +5,7 @@ class FakeHrPy < Sinatra::Base
   #   json_response 200, 'employees.json'
   # end
 
-  get '/employee/v1/l/:last_name/:first_name' do
+  get '/employee/v1/?:status?/l/:last_name/:first_name' do
     lname = params['last_name']
     fname = params['first_name']
 
@@ -16,7 +16,7 @@ class FakeHrPy < Sinatra::Base
     end
   end
 
-  get '/employee/v1/l/:last_name' do
+  get '/employee/v1/?:status?/l/:last_name' do
     lname = params['last_name']
 
     if /Meyer/i =~ lname
@@ -24,7 +24,7 @@ class FakeHrPy < Sinatra::Base
     end
   end
 
-  get '/employee/v1/:search_string' do
+  get '/employee/v1/?:status?/:search_string' do
     employee_id = params['search_string']
 
     if employee_id == 'tmeyer2'
