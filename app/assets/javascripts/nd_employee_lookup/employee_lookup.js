@@ -1,3 +1,16 @@
+function nd_employee_lookup_set_and_display_employee(employee_data) {
+  $('#employee_net_id').val(employee_data.net_id);
+  $('#employee_ndid').val(employee_data.nd_id);
+  $('#employee_last_name').val(employee_data.last_name);
+  $('#employee_first_name').val(employee_data.first_name);
+  $('#employee_home_org').val(employee_data.home_orgn);
+  $('#employee_home_org_desc').val(employee_data.home_orgn_desc);
+  $('#employee_pidm').val(employee_data.pidm);
+  $('#employee_primary_title').val(employee_data.primary_title);
+  $('#employee_active_primary_title').val(employee_data.active_primary_title);
+  $('#employee_lookup').submit();
+}
+
 function nd_employee_lookup_set_employee_input (emp_sel_box) {
   var emp_array = {};
 
