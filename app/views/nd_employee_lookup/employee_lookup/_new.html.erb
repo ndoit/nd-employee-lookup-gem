@@ -1,0 +1,27 @@
+<script>
+$(document).ready(function() {
+  $(document).on('submit','form',function(){
+    $('#submit_processing').addClass('ajax-processing');
+    return(true);
+  });
+  $(document).on('nd_employee_lookup:employee_selected', function(event, employee_data) {
+    nd_employee_lookup_set_and_display_employee(employee_data);
+  });
+});
+</script>
+<div class="row">
+  <div class="large-12 medium-12 small-12">
+    <h1>Employee Lookup</h1>
+  </div>
+</div>
+
+<div class="row" id="employee_edit">
+  <!-- begin partial -->
+  <%= render partial: 'nd_employee_lookup/employee_lookup/employee_search', locals: { status: status } %>
+  <!-- end partial -->
+</div>
+
+<%= render partial: 'nd_employee_lookup/hidden_employee_form', locals: {
+  employee: {},
+  submit_to: show_employees_path,
+  form_id: 'employee_lookup' } %>

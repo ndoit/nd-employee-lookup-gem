@@ -1,0 +1,11 @@
+<%= form_tag submit_to, :method => 'post', :id => form_id do %>
+  <%= hidden_field_tag 'net_id', employee['net_id'], {id: 'employee_net_id'} %>
+  <%= hidden_field_tag 'ndid', employee['ndid'], {id: 'employee_ndid'} %>
+  <%= hidden_field_tag 'last_name', employee['last_name'], {id:  'employee_last_name'} %>
+  <%= hidden_field_tag 'first_name', employee['first_name'], {id:  'employee_first_name'} %>
+  <%= hidden_field_tag 'pidm', employee['pidm'], {id: 'employee_pidm'} %>
+  <%= hidden_field_tag 'home_org', employee['home_org'], {id: 'employee_home_org'} %>
+  <%= hidden_field_tag 'home_org_desc', employee['home_org_desc'], {id: 'employee_home_org_desc'} %>
+  <%= hidden_field_tag 'primary_title', employee['primary_title'], {id: 'employee_primary_title'} %>
+  <%= hidden_field_tag 'active_primary_title', employee['active_primary_title'], {id: 'employee_active_primary_title'} %>
+<% end %>

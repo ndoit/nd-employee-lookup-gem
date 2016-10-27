@@ -1,4 +1,17 @@
-function nd_employee_lookup_set_employee_input ( emp_sel_box) {
+function nd_employee_lookup_set_and_display_employee(employee_data) {
+  $('#employee_net_id').val(employee_data.net_id);
+  $('#employee_ndid').val(employee_data.nd_id);
+  $('#employee_last_name').val(employee_data.last_name);
+  $('#employee_first_name').val(employee_data.first_name);
+  $('#employee_home_org').val(employee_data.home_orgn);
+  $('#employee_home_org_desc').val(employee_data.home_orgn_desc);
+  $('#employee_pidm').val(employee_data.pidm);
+  $('#employee_primary_title').val(employee_data.primary_title);
+  $('#employee_active_primary_title').val(employee_data.active_primary_title);
+  $('#employee_lookup').submit();
+}
+
+function nd_employee_lookup_set_employee_input (emp_sel_box) {
   var emp_array = {};
 
   var last_span = $('#'+emp_sel_box).find('span.emp_sel_last');
@@ -14,11 +27,11 @@ function nd_employee_lookup_set_employee_input ( emp_sel_box) {
   return emp_array;
 }
 
-
 function nd_employee_lookup_alert(msg) {
   $('#nd_employee_lookup_alert_text').text(msg);
   $('#nd_employee_lookup_alert_box_div').show();
 }
+
 function nd_employee_lookup_build_employee_selection (input) {
   var emp_string =  '<div class="row ">';
   emp_string += '<div class="large-12 medium-12 small-12 columns left ">';
@@ -42,10 +55,9 @@ function nd_employee_lookup_build_employee_selection (input) {
   emp_string += ' </div>';
 
   $('#nd_employee_lookup_select_employee_list').append('<div class="select_box emp_sel_box" id="emp'+input.nd_id +'">' + emp_string + '</div>');
-
 }
-function doActionOnReturn( e, field_id) {
 
+function doActionOnReturn(e, field_id) {
   var key=e.keyCode || e.which;
   if (key == 13) {
     switch (field_id) {
@@ -55,7 +67,6 @@ function doActionOnReturn( e, field_id) {
     }
   }
 }
-
 
 function nd_employee_lookup_find() {
   $('#nd_employee_lookup_alert_box_div').hide();
@@ -74,16 +85,13 @@ function nd_employee_lookup_find() {
   else {
     if (lname != "") {
       lookup_url = lookup_url + '/l/' + lname;
-      if (fname != "")
-        lookup_url = lookup_url + '/' + fname;
+      if (fname != "") lookup_url = lookup_url + '/' + fname;
     }
     else  {
-      nd_employee_lookup_alert("Invalid entries.  You must provide part or all of the last name -OR- part or all of the NetID -OR- the ndID.  First name is optional.");                 
-      // $('#employee_invalid_entries').show();
+      nd_employee_lookup_alert("Invalid entries.  You must provide part or all of the last name -OR- part or all of the NetID -OR- the ndID.  First name is optional.");
       return;
     }
   }
-  //  lookup_url = lookup_url + ".json";
   $('#nd_employee_lookup_find_employee_processing').addClass("ajax-processing");
   $.ajax({ url: lookup_url,
     contentType: "json",
@@ -91,23 +99,22 @@ function nd_employee_lookup_find() {
     cache: false,
     error: function(XMLHttpRequest, textStatus, errorThrown) {
       $('#nd_employee_lookup_find_employee_processing').removeClass("ajax-processing");
-      nd_employee_lookup_alert("An error has occurred while attempting to retrieve employee data.  Please confirm that all necessary web services are running. (" + errorThrown + ")");                 
+      nd_employee_lookup_alert("An error has occurred while attempting to retrieve employee data.  Please confirm that all necessary web services are running. (" + errorThrown + ")");
     },
     success: function (data, status, xhr) {
       if (data.length == 0) {
-      nd_employee_lookup_alert("An employee could not be found with the provided information.  Please check your entries and try again. ");   
+        nd_employee_lookup_alert("An employee could not be found with the provided information.  Please check your entries and try again. ");
       }
       else {
         if (data.length == 1) {
           if (data[0].Employee == "None") {
-            nd_employee_lookup_alert("An employee could not be found with the provided information.  Please check your entries and try again. ");   
+            nd_employee_lookup_alert("An employee could not be found with the provided information.  Please check your entries and try again. ");
           }
           else if (data[0].Employee == "Error") {
-            nd_employee_lookup_alert("The API for employee lookup returned an error.  Please check your code. "); 
+            nd_employee_lookup_alert("The API for employee lookup returned an error.  Please check your code. ");
           }
-          else { 
+          else {
             $(document).trigger("nd_employee_lookup:employee_selected", data[0]);
-            //display_employee( data[0]);
           }
         }
         else {
@@ -116,16 +123,14 @@ function nd_employee_lookup_find() {
             nd_employee_lookup_build_employee_selection (data[i]);
           }
           $('#nd_employee_lookup_select_employee').foundation('reveal', 'open');
-          $('.emp_sel_box').click( function() {
-            var  selected_employee = nd_employee_lookup_set_employee_input ( $(this).attr('id'));
+          $('.emp_sel_box').click(function() {
+            var  selected_employee = nd_employee_lookup_set_employee_input ($(this).attr('id'));
             $(document).trigger("nd_employee_lookup:employee_selected", selected_employee);
-            //display_employee( selected_employee) ;
             $('#nd_employee_lookup_select_employee').foundation('reveal', 'close');
           });
         }
       }
-  $('#nd_employee_lookup_find_employee_processing').removeClass("ajax-processing");
+      $('#nd_employee_lookup_find_employee_processing').removeClass("ajax-processing");
     }
   });
-
 }
