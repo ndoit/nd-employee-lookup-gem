@@ -1,10 +1,6 @@
 require 'sinatra/base'
 
 class FakeHrPy < Sinatra::Base
-  # get '/employee/v1/l/:last_name' do
-  #   json_response 200, 'employees.json'
-  # end
-
   get '/employee/v1/?:status?/l/:last_name/:first_name' do
     lname = params['last_name']
     fname = params['first_name']
