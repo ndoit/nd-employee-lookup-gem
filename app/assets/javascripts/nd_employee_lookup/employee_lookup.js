@@ -1,13 +1,12 @@
 function nd_employee_lookup_set_and_display_employee(employee_data) {
   $('#employee_net_id').val(employee_data.net_id);
-  $('#employee_ndid').val(employee_data.nd_id);
+  $('#employee_nd_id').val(employee_data.nd_id);
   $('#employee_last_name').val(employee_data.last_name);
   $('#employee_first_name').val(employee_data.first_name);
-  $('#employee_home_org').val(employee_data.home_orgn);
-  $('#employee_home_org_desc').val(employee_data.home_orgn_desc);
+  $('#employee_home_orgn').val(employee_data.home_orgn);
+  $('#employee_home_orgn_desc').val(employee_data.home_orgn_desc);
   $('#employee_pidm').val(employee_data.pidm);
   $('#employee_primary_title').val(employee_data.primary_title);
-  $('#employee_active_primary_title').val(employee_data.active_primary_title);
   $('#employee_lookup').submit();
 }
 
@@ -19,8 +18,8 @@ function nd_employee_lookup_set_employee_input (emp_sel_box) {
   emp_array.first_name = $('#'+emp_sel_box).find('span.emp_sel_first').text();
   emp_array.pidm = $('#'+emp_sel_box).find('span.emp_sel_pidm').text();
   emp_array.net_id = $('#'+emp_sel_box).find('span.emp_sel_net_id').text();
-  emp_array.home_orgn = $('#'+emp_sel_box).find('span.emp_sel_home_org').text();
-  emp_array.home_orgn_desc = $('#'+emp_sel_box).find('span.emp_sel_home_org_desc').text();
+  emp_array.home_orgn = $('#'+emp_sel_box).find('span.emp_sel_home_orgn').text();
+  emp_array.home_orgn_desc = $('#'+emp_sel_box).find('span.emp_sel_home_orgn_desc').text();
   emp_array.nd_id = $('#'+emp_sel_box).find('span.emp_sel_nd_id').text();
   emp_array.primary_title = $('#'+emp_sel_box).find('span.emp_sel_title').text();
   emp_array.active_primary_title = $('#'+emp_sel_box).find('span.emp_sel_title').text();
@@ -41,7 +40,7 @@ function nd_employee_lookup_build_employee_selection (input) {
   emp_string += ' <div class="large-2 medium-1 small-3 columns left"><label>NetID:</label></div>';
   emp_string += ' <div class="large-3 medium-3 small-9 columns left"><span class="emp_sel_net_id">' + (input.net_id || '') +'</span>' + (input.net_id ? '' : '(No NetID)') + '</div>';
   emp_string += ' <div class="large-2 medium-2 small-3 columns left"><label>Home Orgn: </label></div>';
-  emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_home_org">'+ input.home_orgn + '</span>, <span class="emp_sel_home_org_desc">' + input.home_orgn_desc + '</span></div>';
+  emp_string += ' <div class="large-5 medium-6 small-9 columns left"><span class="emp_sel_home_orgn">'+ input.home_orgn + '</span>, <span class="emp_sel_home_orgn_desc">' + input.home_orgn_desc + '</span></div>';
   emp_string += ' </div>';
   emp_string += ' <div class="row">';
   emp_string += ' <div class="large-2 medium-1 small-3 columns left"><label>ndID:</label></div>';
@@ -114,6 +113,9 @@ function nd_employee_lookup_find() {
             nd_employee_lookup_alert("The API for employee lookup returned an error.  Please check your code. ");
           }
           else {
+            if(only_show_active_primary_title) {
+              data[0].primary_title = data[0].active_primary_title;
+            }
             $(document).trigger("nd_employee_lookup:employee_selected", data[0]);
           }
         }

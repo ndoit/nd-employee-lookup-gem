@@ -8,12 +8,12 @@
     <div class="large-1 medium-1 small-3 columns left"><label>NetID:</label></div>
     <div class="large-3 medium-3 small-9 columns left"><span id="employee_net_id"><%= employee['net_id'].blank? ? '(No NetID)' : employee['net_id'] %></span></div>
     <div class="large-2 medium-2 small-3 columns left"><label>Home Orgn: </label></div>
-    <div class="large-6 medium-6 small-9 columns left"><span id="employee_home_org"><%= employee['home_org'] %> - <%= employee['home_org_desc'] %></span></div>
+    <div class="large-6 medium-6 small-9 columns left"><span id="employee_home_orgn"><%= employee['home_orgn'] %> - <%= employee['home_orgn_desc'] %></span></div>
   </div>
   <div class="row">
     <div class="large-1 medium-1 small-3 columns left"><label>NDID:</label></div>
-    <div class="large-3 medium-3 small-9 columns left"><span id="employee_nd_id"><%= employee['ndid'] %></span></div>
+    <div class="large-3 medium-3 small-9 columns left"><span id="employee_nd_id"><%= employee['nd_id'] %></span></div>
     <div class="large-2 medium-2 small-3 columns left"><label>Primary Title: </label></div>
-    <div class="large-6 medium-6 small-9 columns left"><span id="employee_title"><%= employee['active_primary_title'].blank? ? '' : employee['active_primary_title'] %></span></div>
+    <div class="large-6 medium-6 small-9 columns left"><span id="employee_title"><%= employee['primary_title'].blank? ? '' : employee['primary_title'] %></span></div>
   </div>
 </div>
