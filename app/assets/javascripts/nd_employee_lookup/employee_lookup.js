@@ -1,12 +1,12 @@
 function nd_employee_lookup_set_and_display_employee(employee_data) {
-  $('#employee_net_id').val(employee_data.net_id);
-  $('#employee_nd_id').val(employee_data.nd_id);
-  $('#employee_last_name').val(employee_data.last_name);
-  $('#employee_first_name').val(employee_data.first_name);
-  $('#employee_home_orgn').val(employee_data.home_orgn);
-  $('#employee_home_orgn_desc').val(employee_data.home_orgn_desc);
-  $('#employee_pidm').val(employee_data.pidm);
-  $('#employee_primary_title').val(employee_data.primary_title);
+  $('#employee_lookup_employee_net_id').val(employee_data.net_id);
+  $('#employee_lookup_employee_nd_id').val(employee_data.nd_id);
+  $('#employee_lookup_employee_last_name').val(employee_data.last_name);
+  $('#employee_lookup_employee_first_name').val(employee_data.first_name);
+  $('#employee_lookup_employee_home_orgn').val(employee_data.home_orgn);
+  $('#employee_lookup_employee_home_orgn_desc').val(employee_data.home_orgn_desc);
+  $('#employee_lookup_employee_pidm').val(employee_data.pidm);
+  $('#employee_lookup_employee_primary_title').val(employee_data.primary_title);
   $('#employee_lookup').submit();
 }
 

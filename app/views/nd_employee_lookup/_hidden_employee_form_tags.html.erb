@@ -1,8 +1,21 @@
-<%= hidden_field_tag 'net_id', employee['net_id'], {id: 'employee_net_id'} %>
-<%= hidden_field_tag 'nd_id', employee['nd_id'], {id: 'employee_nd_id'} %>
-<%= hidden_field_tag 'last_name', employee['last_name'], {id:  'employee_last_name'} %>
-<%= hidden_field_tag 'first_name', employee['first_name'], {id:  'employee_first_name'} %>
-<%= hidden_field_tag 'pidm', employee['pidm'], {id: 'employee_pidm'} %>
-<%= hidden_field_tag 'home_orgn', employee['home_orgn'], {id: 'employee_home_orgn'} %>
-<%= hidden_field_tag 'home_orgn_desc', employee['home_orgn_desc'], {id: 'employee_home_orgn_desc'} %>
-<%= hidden_field_tag 'primary_title', employee['primary_title'], {id: 'employee_primary_title'} %>
+<%= form.fields_for employee do |e| %>
+  <%= e.hidden_field :net_id %>
+  <%= e.hidden_field :nd_id %>
+  <%= e.hidden_field :last_name %>
+  <%= e.hidden_field :first_name %>
+  <%= e.hidden_field :pidm %>
+  <%= e.hidden_field :home_orgn %>
+  <%= e.hidden_field :home_orgn_desc %>
+  <%= e.hidden_field :primary_title %>
+  <%= e.fields_for :employee_jobs do |j| %>
+    <%= j.hidden_field :title %>
+    <%= j.hidden_field :orgn_code %>
+    <%= j.hidden_field :orgn_title %>
+    <%= j.hidden_field :primary %>
+    <%= j.hidden_field :status %>
+    <%= j.hidden_field :posn %>
+    <%= j.hidden_field :suffix %>
+    <%= j.hidden_field :start_date %>
+    <%= j.hidden_field :end_date %>
+  <% end %>
+<% end %>
