@@ -11,8 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103142157) do
-
+ActiveRecord::Schema.define(version: 20161103142416) do
   create_table "nd_employee_lookup_employees", force: :cascade do |t|
     t.text     "net_id"
     t.text     "nd_id"
@@ -29,4 +28,23 @@ ActiveRecord::Schema.define(version: 20161103142157) do
     t.datetime "updated_at",      null: false
   end
 
+  create_table "nd_job_lookup_employee_jobs", force: :cascade do |t|
+    t.integer  "employee_id"
+    t.integer  "pidm"
+    t.text     "posn"
+    t.text     "suffix"
+    t.text     "employee_class"
+    t.text     "primary"
+    t.date     "start_date"
+    t.date     "end_date"
+    t.text     "title"
+    t.text     "status"
+    t.text     "status_description"
+    t.date     "last_paid"
+    t.text     "orgn_code"
+    t.text     "orgn_title"
+    t.text     "pict_code"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+  end
 end
