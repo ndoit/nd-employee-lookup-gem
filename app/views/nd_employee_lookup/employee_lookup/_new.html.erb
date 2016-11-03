@@ -21,7 +21,9 @@ $(document).ready(function() {
   <!-- end partial -->
 </div>
 
+<%= form_for :employee_lookup, url: show_employees_path, method: 'post', html: {id: 'employee_lookup'} do |form| %>
 <%= render partial: 'nd_employee_lookup/hidden_employee_form', locals: {
-  employee: {},
+  employee: NdEmployeeLookup::Employee.new(),
   submit_to: show_employees_path,
-  form_id: 'employee_lookup' } %>
+  form: form } %>
+<% end %>
