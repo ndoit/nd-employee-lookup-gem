@@ -18,6 +18,7 @@ function nd_employee_lookup_set_employee_input (emp_sel_box) {
 
   var last_span = $('#'+emp_sel_box).find('span.emp_sel_last');
   emp_array.last_name = $('#'+emp_sel_box).find('span.emp_sel_last').text();
+  emp_array.middle_init = $('#'+emp_sel_box).find('span.emp_sel_middle').text();
   emp_array.first_name = $('#'+emp_sel_box).find('span.emp_sel_first').text();
   emp_array.pidm = $('#'+emp_sel_box).find('span.emp_sel_pidm').text();
   emp_array.net_id = $('#'+emp_sel_box).find('span.emp_sel_net_id').text();
@@ -26,6 +27,8 @@ function nd_employee_lookup_set_employee_input (emp_sel_box) {
   emp_array.nd_id = $('#'+emp_sel_box).find('span.emp_sel_nd_id').text();
   emp_array.primary_title = $('#'+emp_sel_box).find('span.emp_sel_title').text();
   emp_array.active_primary_title = $('#'+emp_sel_box).find('span.emp_sel_title').text();
+  emp_array.employee_status = $('#'+emp_sel_box).find('span.emp_sel_status').text();
+  emp_array.ecls_code = $('#'+emp_sel_box).find('span.emp_sel_ecls_code').text();
   return emp_array;
 }
 
@@ -38,6 +41,7 @@ function nd_employee_lookup_build_employee_selection (input) {
   var emp_string =  '<div class="row ">';
   emp_string += '<div class="large-12 medium-12 small-12 columns left ">';
   emp_string += '<strong><span>Name: <span class="emp_sel_last">' + input.last_name + '</span>, <span class="emp_sel_first">' + input.first_name + '</span><span class="emp_sel_pidm">' + input.pidm + '</span></span></strong>';
+  emp_string += '<span class="emp_sel_middle">' + input.middle_init + '</span><span class="emp_sel_status">' + input.employee_status + '</span><span class="emp_sel_ecls_code">' + input.ecls_code + '</span>';
   emp_string += '</div></div>';
   emp_string += ' <div class="row">';
   emp_string += ' <div class="large-2 medium-1 small-3 columns left"><label>NetID:</label></div>';
