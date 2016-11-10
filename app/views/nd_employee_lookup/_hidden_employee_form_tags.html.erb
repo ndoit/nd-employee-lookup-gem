@@ -2,11 +2,14 @@
   <%= e.hidden_field :net_id %>
   <%= e.hidden_field :nd_id %>
   <%= e.hidden_field :last_name %>
+  <%= e.hidden_field :middle_init %>
   <%= e.hidden_field :first_name %>
   <%= e.hidden_field :pidm %>
   <%= e.hidden_field :home_orgn %>
   <%= e.hidden_field :home_orgn_desc %>
   <%= e.hidden_field :primary_title %>
+  <%= e.hidden_field :employee_status %>
+  <%= e.hidden_field :ecls_code %>
   <%= e.fields_for :employee_jobs do |j| %>
     <%= j.hidden_field :title %>
     <%= j.hidden_field :orgn_code %>
