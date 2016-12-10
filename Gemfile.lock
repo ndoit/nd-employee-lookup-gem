@@ -1,4 +1,16 @@
 GIT
+  remote: git@bitbucket.org:nd-oit/nd-job-lookup-gem.git
+  revision: 992c09692e8ccbe249cd19f41d9a31c723c01962
+  specs:
+    nd_job_lookup (0.2.8)
+      foundation-rails (~> 5.4.3.0)
+      jquery-rails (~> 4.2.1)
+      nd_employee_lookup (~> 0.2.0)
+      rails (~> 4.2.7.1)
+      slim (~> 3.0.7)
+      slim-rails (~> 3.1.1)
+
+GIT
   remote: git@github.com:kingdonb/capybara-webkit.git
   revision: 464f57c9d228ec15ed021c5b6a6eb0c4c44b3b0d
   specs:
@@ -7,19 +19,9 @@ GIT
       json
 
 PATH
-  remote: ../nd_job_lookup
-  specs:
-    nd_job_lookup (0.2.5)
-      foundation-rails (~> 5.4.3.0)
-      jquery-rails (~> 4.2.1)
-      rails (~> 4.2.7.1)
-      slim (~> 3.0.7)
-      slim-rails (~> 3.1.1)
-
-PATH
   remote: .
   specs:
-    nd_employee_lookup (0.2.4)
+    nd_employee_lookup (0.2.5)
       foundation-rails (~> 5.4.3.0)
       jquery-rails (~> 4.2.1)
       rails (~> 4.2.7.1)
@@ -210,4 +212,4 @@ DEPENDENCIES
   webmock (~> 2.1.0)
 
 BUNDLED WITH
-   1.13.1
+   1.13.6
