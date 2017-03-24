@@ -53,7 +53,7 @@ module NdEmployeeLookup
         when "active"
           cparams[:status] = "active"
         else
-          raise InvalidParams
+          cparams[:status] = params[:status]
         end
       end
       if params.key?(:last_name)
