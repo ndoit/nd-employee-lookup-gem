@@ -1,5 +1,6 @@
 module NdEmployeeLookup
   class InvalidLookup < StandardError; end
+  class InvalidParams < StandardError; end
   class HrpyEmployeePerson # < ActiveRecord::Base
     attr_accessor :net_id, :last_name, :first_name, :nd_id
     attr_accessor :errors
