@@ -1,4 +1,4 @@
-require "#{Rails.root}/lib/errors.rb"
+require "#{::Rails.root}/lib/errors.rb"
 
 module NdEmployeeLookup
   class HrpyEmployeePerson # < ActiveRecord::Base

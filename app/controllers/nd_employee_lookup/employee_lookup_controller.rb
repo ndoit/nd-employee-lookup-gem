@@ -2,7 +2,7 @@ require 'open-uri'
 require 'uri'
 require 'json'
 
-require "#{Rails.root}/lib/errors.rb"
+require "#{::Rails.root}/lib/errors.rb"
 
 module NdEmployeeLookup
   class EmployeeLookupController < ApplicationController
