@@ -2,8 +2,7 @@ require 'open-uri'
 require 'uri'
 require 'json'
 
-class InvalidParams < StandardError
-end
+require "#{Rails.root}/lib/errors.rb"
 
 module NdEmployeeLookup
   class EmployeeLookupController < ApplicationController
@@ -27,7 +26,7 @@ module NdEmployeeLookup
 
     rescue => e
       case e
-      when InvalidParams
+      when NdEmployeeLookup::InvalidParams
         render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "Invalid Parameters"}]')
       when OpenURI::HTTPError
         render :json => JSON.parse('[{ "Employee": "Error", "employee_title": "HRPY API server denied the API request"}]')

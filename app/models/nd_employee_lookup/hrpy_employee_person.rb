@@ -1,12 +1,12 @@
+require "#{Rails.root}/lib/errors.rb"
+
 module NdEmployeeLookup
-  class InvalidLookup < StandardError; end
-  class InvalidParams < StandardError; end
   class HrpyEmployeePerson # < ActiveRecord::Base
     attr_accessor :net_id, :last_name, :first_name, :nd_id
     attr_accessor :errors
 
     def self.find_by(*args)
-      raise InvalidLookup if args[0].keys == [:first_name]
+      raise NdEmployeeLookup::InvalidLookup if args[0].keys == [:first_name]
       search_results = JSON.parse(search(args[0]))
       r = []
       unless search_results.empty?
@@ -61,21 +61,21 @@ module NdEmployeeLookup
         if params[:last_name].length <= 60
           cparams[:last_name] = params[:last_name]
         else
-          raise InvalidParams
+          raise NdEmployeeLookup::InvalidParams
         end
       end
       if params.key?(:first_name)
         if params[:first_name].length <= 60
           cparams[:first_name] = params[:first_name]
         else
-          raise InvalidParams
+          raise NdEmployeeLookup::InvalidParams
         end
       end
       if params.key?(:employee_id)
         if params[:employee_id] =~ /[a-zA-Z0-9]/
           cparams[:search_string] = params[:employee_id]
         else
-          raise InvalidParams
+          raise NdEmployeeLookup::InvalidParams
         end
       end
       return cparams
