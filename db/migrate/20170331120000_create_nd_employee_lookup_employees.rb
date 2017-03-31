@@ -12,6 +12,7 @@ class CreateNdEmployeeLookupEmployees < ActiveRecord::Migration
       t.text :home_orgn_desc
       t.integer :pidm
       t.text :ecls_code
+      t.text :employee_pict_code
 
       t.timestamps null: false
     end
