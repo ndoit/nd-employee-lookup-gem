@@ -11,6 +11,7 @@
   <%= e.hidden_field :employee_status %>
   <%= e.hidden_field :ecls_code %>
   <%= e.hidden_field :employee_pict_code %>
+  <%= e.hidden_field :last_paid_date %>
   <%= e.fields_for :employee_jobs do |j| %>
     <%= j.hidden_field :title %>
     <%= j.hidden_field :orgn_code %>
