@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161103142416) do
+ActiveRecord::Schema.define(version: 20170608084541) do
   create_table "nd_employee_lookup_employees", force: :cascade do |t|
     t.text     "net_id"
     t.text     "nd_id"
@@ -24,8 +24,10 @@ ActiveRecord::Schema.define(version: 20161103142416) do
     t.text     "home_orgn_desc"
     t.integer  "pidm"
     t.text     "ecls_code"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.text     "employee_pict_code"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.datetime "last_paid_date"
   end
 
   create_table "nd_job_lookup_employee_jobs", force: :cascade do |t|
