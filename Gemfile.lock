@@ -1,30 +1,22 @@
 GIT
   remote: git@bitbucket.org:nd-oit/nd-job-lookup-gem.git
-  revision: bd86cee15c48448c895b41d71e6a4d0ed4968893
+  revision: 81b43b177e558ef772ac21f783b558995db3fa7f
   specs:
-    nd_job_lookup (0.2.10)
+    nd_job_lookup (0.3.2)
       foundation-rails (~> 5.4.3.0)
       jquery-rails (~> 4.2.1)
-      nd_employee_lookup (~> 0.2.0)
-      rails (~> 4.2.7.1)
+      nd_employee_lookup (~> 0.3.1)
+      rails (~> 4.2.7)
       slim (~> 3.0.7)
       slim-rails (~> 3.1.1)
-
-GIT
-  remote: git@github.com:kingdonb/capybara-webkit.git
-  revision: 464f57c9d228ec15ed021c5b6a6eb0c4c44b3b0d
-  specs:
-    capybara-webkit (1.11.1)
-      capybara (>= 2.3.0, < 2.8.0)
-      json
 
 PATH
   remote: .
   specs:
-    nd_employee_lookup (0.3.1)
+    nd_employee_lookup (0.3.2)
       foundation-rails (~> 5.4.3.0)
       jquery-rails (~> 4.2.1)
-      rails (~> 4.2.7.1)
+      rails (~> 4.2.7)
 
 GEM
   remote: https://rubygems.org/
@@ -75,6 +67,9 @@ GEM
       rack (>= 1.0.0)
       rack-test (>= 0.5.4)
       xpath (~> 2.0)
+    capybara-webkit (1.14.0)
+      capybara (>= 2.3.0, < 2.14.0)
+      json
     concurrent-ruby (1.0.5)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
@@ -166,8 +161,8 @@ GEM
       rack (~> 1.5)
       rack-protection (~> 1.4)
       tilt (>= 1.3, < 3)
-    slim (3.0.7)
-      temple (~> 0.7.6)
+    slim (3.0.8)
+      temple (>= 0.7.6, < 0.9)
       tilt (>= 1.3.3, < 2.1)
     slim-rails (3.1.2)
       actionpack (>= 3.1)
@@ -181,7 +176,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.3.13)
-    temple (0.7.7)
+    temple (0.8.0)
     thor (0.19.4)
     thread_safe (0.3.6)
     tilt (2.0.7)
@@ -199,7 +194,7 @@ PLATFORMS
 
 DEPENDENCIES
   capybara (~> 2.7.1)
-  capybara-webkit!
+  capybara-webkit
   database_cleaner
   dotenv
   factory_girl_rails (~> 4.0)
@@ -212,4 +207,4 @@ DEPENDENCIES
   webmock (~> 2.1.0)
 
 BUNDLED WITH
-   1.13.6
+   1.15.3
