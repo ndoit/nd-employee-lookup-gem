@@ -1,6 +1,6 @@
 GIT
   remote: git@bitbucket.org:nd-oit/nd-job-lookup-gem.git
-  revision: 81b43b177e558ef772ac21f783b558995db3fa7f
+  revision: 84f997c46970d14c3f4af34e3069918f0764da5b
   specs:
     nd_job_lookup (0.3.2)
       foundation-rails (~> 5.4.3.0)
