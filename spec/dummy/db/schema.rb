@@ -11,7 +11,8 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170608084541) do
+ActiveRecord::Schema.define(version: 20171109021705) do
+
   create_table "nd_employee_lookup_employees", force: :cascade do |t|
     t.text     "net_id"
     t.text     "nd_id"
@@ -28,6 +29,7 @@ ActiveRecord::Schema.define(version: 20170608084541) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
     t.datetime "last_paid_date"
+    t.date     "current_hire_date"
   end
 
   create_table "nd_job_lookup_employee_jobs", force: :cascade do |t|
@@ -49,4 +51,5 @@ ActiveRecord::Schema.define(version: 20170608084541) do
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
   end
+
 end
