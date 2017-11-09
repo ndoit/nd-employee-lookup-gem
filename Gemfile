@@ -14,4 +14,4 @@ gemspec
 # gem 'byebug', group: [:development, :test]
 gem 'nd_job_lookup', git: 'git@bitbucket.org:nd-oit/nd-job-lookup-gem.git'
 
-gem 'capybara-webkit'
+#gem 'capybara-webkit'
