@@ -1,8 +1,8 @@
 GIT
   remote: git@bitbucket.org:nd-oit/nd-job-lookup-gem.git
-  revision: 84f997c46970d14c3f4af34e3069918f0764da5b
+  revision: 5bb5df2cde676e8410cfdf5d6d5794afcf98933e
   specs:
-    nd_job_lookup (0.3.2)
+    nd_job_lookup (0.3.3)
       foundation-rails (~> 5.4.3.0)
       jquery-rails (~> 4.2.1)
       nd_employee_lookup (~> 0.3.1)
@@ -159,7 +159,7 @@ GEM
     slim (3.0.8)
       temple (>= 0.7.6, < 0.9)
       tilt (>= 1.3.3, < 2.1)
-    slim-rails (3.1.2)
+    slim-rails (3.1.3)
       actionpack (>= 3.1)
       railties (>= 3.1)
       slim (~> 3.0)
