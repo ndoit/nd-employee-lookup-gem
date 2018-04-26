@@ -30,8 +30,8 @@ $(".active_employee_net_id_input").autocomplete({
   minLength: 3,
   select: function (event, ui) {
     $(this).val(ui.item.value);
-    $(this).trigger('blur');
     $(this).trigger('change');
+    $(this).trigger('blur');
   },
   change: function (event, ui) {
     if (typeof select_active_employee_net_id_input == 'function') {
