@@ -52,3 +52,47 @@ div.select_box {
   padding: 10px;
   background: white  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
 }
+
+// hide helpful text from jquery ui autocomplete
+.ui-helper-hidden-accessible {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+
+
+.ui-autocomplete {
+    max-height: 200px;
+    max-width: 300px;
+    overflow-y: auto;
+    /* prevent horizontal scrollbar */
+    overflow-x: hidden;
+    white-space:nowrap;
+  }
+
+
+ .ui-menu .ui-menu-item {
+ 	font-size: 0.75rem;
+
+ }
+
+ .ui-autocomplete-loading {
+ 	background: white  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+ }
+  .ui-autocomplete-loading:focus {
+ 	background: #fafafa  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+ }
+
+
+ input[type="text"].ui-autocomplete-loading {
+ 	background: white  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+ }
+
+ input[type="text"].ui-autocomplete-loading:focus {
+ 	background: #fafafa  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+ }

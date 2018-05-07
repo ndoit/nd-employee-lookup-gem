@@ -102,3 +102,16 @@ permissions the requestor's API key will need.)
 I think that's all you need... good luck!
 
 --Kingdon
+
+TMEYER2 Addition 4/25/2018
+
+Added a quick lookup for employees in the employee_lookup_controller.rb.
+Added javascript to generate an employee autocomplete text field.
+Added javascript to get employee information from an id.
+```
+Add the class active_employee_net_id_input to your input field
+Call set_active_employee_net_id_autocomplete in document ready
+Select and change will call a function named
+select_active_employee_net_id_input (net_id_field, net_id)  if it is available
+```
+An example of using this functionality is available in spec/dummy/views/employees/select_example.html.erb.

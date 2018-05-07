@@ -45,6 +45,19 @@ module NdEmployeeLookup
       url_open.read
     end
 
+    def self.quick_search(params)
+      clean_params = sanitize_params(params)
+      url_open = open quick_search_lookup_url_from_params(clean_params)
+      url_open.read
+    end
+
+    def self.quick_search_lookup_url_from_params(params)
+      lookup_url = "#{ENV['HRPY_API_BASE']}/employee/v1/quick_lookup"
+      lookup_url += "/#{URI.encode(params[:search_string])}"
+      lookup_url += "/#{URI.encode(params[:status])}" if params[:status]
+      lookup_url += "?api_key=#{ENV['HRPY_API_KEY']}"
+    end
+
     def self.sanitize_params(params)
       cparams = {}
       if params.key?(:status)
@@ -78,6 +91,21 @@ module NdEmployeeLookup
           raise NdEmployeeLookup::InvalidParams
         end
       end
+      if params.has_key?(:search_string)
+        if params[:search_string] =~ /[0-9]{9}/
+          cparams[:ndid] = params[:search_string]
+        else
+          if params[:search_string] =~ /\A[a-zA-Z0-9]+\Z/
+            cparams[:net_id] = params[:search_string]
+          end
+        end
+        if params[:search_string] =~ /\A[a-zA-Z0-9 '-,.]+\Z/
+          cparams[:search_string] = params[:search_string]
+        else
+          raise InvalidParams
+        end
+      end
+
       return cparams
     rescue => e
       raise e

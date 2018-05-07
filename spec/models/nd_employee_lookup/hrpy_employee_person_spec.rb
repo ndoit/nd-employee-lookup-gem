@@ -41,5 +41,16 @@ module NdEmployeeLookup
       expect(res.count).to eq 2
       expect(res.first).to be_instance_of(HrpyEmployeePerson)
     end
+
+    it "finds employees via quick search" do
+      res = JSON.parse(HrpyEmployeePerson.quick_search({search_string: 'tmeyer'}))
+      expect(res.count).to be > 1
+      found_teresa = false
+      res.each do |e|
+        found_teresa = true if e['net_id'] == 'TMEYER2'
+      end
+      expect(found_teresa).to eq(true)
+    end
+
   end
 end

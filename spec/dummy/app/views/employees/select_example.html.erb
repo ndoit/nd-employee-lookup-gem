@@ -1,0 +1,26 @@
+<script type="text/javascript">
+$(document).ready( function() {
+  set_active_employee_net_id_autocomplete();
+});
+
+function select_active_employee_net_id_input(net_id_input,net_id) {
+  $.when(get_employee_from_id(net_id)).done(function() {
+    if (employee_autocomplete_employee_found['ndid']) {
+      $('#responsible_user_id').val(employee_autocomplete_employee_found['net_id']);
+      $('#responsible_user_name').text(employee_autocomplete_employee_found['first_name'] + " " + employee_autocomplete_employee_found['last_name']);
+    }
+  });
+}
+</script>
+
+<div class="row">
+  <div class="large-4 medium-4 small-12 columns left">
+      <label>Contact - <span>Search by typing in NDID, Net ID or Name</span></label>
+      <input type="text" id = 'responsible_user_id' class = 'active_employee_net_id_input' >
+  </div>
+  <div class="large-4 medium-4 small-12 columns left">
+    <label>Contact Name</label>
+    <span id="responsible_user_name"></span>
+  </div>
+
+</div>

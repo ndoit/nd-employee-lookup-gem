@@ -54,5 +54,27 @@ module NdEmployeeLookup
         raise e
       end
     end
+
+
+      def quick_search
+        json = HrpyEmployeePerson.quick_search(params)
+        search_results = JSON.parse(json)
+        render :json => search_results
+      rescue => e
+        render :json => [{error: api_error_message(e)}], :status => :unprocessable_entity
+      end
+
+      def api_error_message(e)
+    	    return "Invalid Parameters" if e.class.to_s == 'InvalidParams'
+    			return "HTTP Error" if e.class.to_s == 'OpenURI::HTTPError'
+    			return "Socket Error" if e.class.to_s == 'SocketError'
+    			return "Invalid URI" if e.class.to_s == 'URI::InvalidURIError'
+    			return "Server not available" if e.class.to_s === 'Errno::ECONNRESET'
+    			Rails::logger.error "API Error: #{e.message}"
+    			return "Unknown Error"
+      end
+
+
+
   end
 end
