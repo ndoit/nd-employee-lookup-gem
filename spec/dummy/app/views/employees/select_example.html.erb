@@ -8,8 +8,9 @@ function select_active_employee_net_id_input(net_id_input,net_id) {
     if (employee_autocomplete_employee_found['ndid']) {
       $('#responsible_user_id').val(employee_autocomplete_employee_found['net_id']);
       $('#responsible_user_name').text(employee_autocomplete_employee_found['first_name'] + " " + employee_autocomplete_employee_found['last_name']);
-    }
-  });
+    }}).fail( function() {
+      $('#responsible_user_name').text(employee_autocomplete_employee_found['error']);
+    });
 }
 </script>
 

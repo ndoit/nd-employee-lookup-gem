@@ -61,7 +61,19 @@ module NdEmployeeLookup
         search_results = JSON.parse(json)
         render :json => search_results
       rescue => e
-        render :json => [{error: api_error_message(e)}], :status => :unprocessable_entity
+        case e.class.to_s
+        when 'NdEmployeeLookup::InvalidParams'
+            render :json => [{error: 'Not Found'}], :status => :not_found
+        when 'OpenURI::HTTPError'
+          response_status = e.io.status[0]
+          if response_status == '404'
+            render :json => [{error: 'Not Found'}], :status => :not_found
+          else
+            render :json => [{error: api_error_message(e)}], :status => :unprocessable_entity
+          end
+        else
+          render :json => [{error: api_error_message(e)}], :status => :unprocessable_entity
+        end
       end
 
       def api_error_message(e)

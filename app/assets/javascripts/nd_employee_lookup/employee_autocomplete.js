@@ -9,25 +9,28 @@ function set_active_employee_net_id_autocomplete() {
 $(".active_employee_net_id_input").autocomplete({
   source: function( request, response) {
     $.ajax({
-      url: "/employee-lookup/employee-basic/" + encodeURIComponent(request.term) + "/active",
-      dataType: "json",
-      delay: 1000,
-      data: {
-      },
-      error: function(XMLHttpRequest, textStatus, errorThrown) {
-            alert("Lookup error for active employees. Please confirm that the HR/Payroll data web services are running. (" + errorThrown + ")");
-      },
-      success: function (data) {
-        response( $.map(data, function( item) {
-          return {
-            label: item.net_id + " - " + item.first_name + " " + item.last_name + " (" + item.home_orgn_desc + ")",
-            value: item.net_id
+          url: "/employee-lookup/employee-basic/" + encodeURIComponent(request.term) + "/active",
+          dataType: "json",
+          data: {
+          },
+          error: function(XMLHttpRequest, textStatus, errorThrown) {
+            if (errorThrown != 'Not Found')
+              alert('An error occurred while searching for employees.  Verify the HR/PY API is running [' + errorThrown +']');
+            response([]);
+          },
+          success: function (data) {
+            response( $.map(data, function( item) {
+                return {
+                  label: item.net_id + " - " + item.first_name + " " + item.last_name + " (" + item.home_orgn_desc + ")",
+                  value: item.net_id
+                }
+            }));
           }
-        }));
-      }
-    });
+        });
+
   },
   minLength: 3,
+  delay: 300,
   select: function (event, ui) {
     $(this).val(ui.item.value);
     $(this).trigger('change');
@@ -56,15 +59,14 @@ function get_employee_from_id(id) {
   return($.ajax({
     url: "/employee-lookup/employee-basic/" + encodeURIComponent(id) + "/active" ,
     dataType: "json",
-    delay: 1000,
     data: {
     },
     error: function(XMLHttpRequest, textStatus, errorThrown) {
-          alert("Lookup error for active employees. Please confirm that the HR/Payroll data web services are running. (" + errorThrown + ")");
-          employee_autocomplete_employee_found = {error: errorThrown};
+      if (errorThrown != 'Not Found')
+        alert('An error occurred while searching for employees.  Verify the HR/PY API is running [' + errorThrown +']');
+      employee_autocomplete_employee_found = {error: errorThrown};
     },
     success: function (data) {
-      // expecting just one match.  Error if more
       switch (data.length) {
         case 1:
           employee_autocomplete_employee_found = data[0];
@@ -73,7 +75,16 @@ function get_employee_from_id(id) {
           employee_autocomplete_employee_found = {error: 'Employee could not be found using provided ID.'}
           break;
         default:
-          employee_autocomplete_employee_found = {error: 'More than one match on id lookup.'}
+          var employee_found = false;
+          for(i=0;i<data.length;i++) {
+            if (data[i].net_id == id) {
+              employee_autocomplete_employee_found = data[i];
+              employee_found = true;
+              break;
+            }
+          }
+          if (!employee_found)
+            employee_autocomplete_employee_found = {error: 'Employee could not be found using provided ID.'};
       }
     }
   }));
