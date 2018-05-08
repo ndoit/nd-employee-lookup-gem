@@ -99,10 +99,10 @@ module NdEmployeeLookup
             cparams[:net_id] = params[:search_string]
           end
         end
-        if params[:search_string] =~ /\A[a-zA-Z0-9 '-,.]+\Z/
+        if params[:search_string] =~ /\A[a-zA-Z0-9 '\-,.]+\Z/
           cparams[:search_string] = params[:search_string]
         else
-          raise InvalidParams
+          raise NdEmployeeLookup::InvalidParams
         end
       end
 
