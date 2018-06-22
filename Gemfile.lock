@@ -13,7 +13,7 @@ GIT
 PATH
   remote: .
   specs:
-    nd_employee_lookup (0.4.1)
+    nd_employee_lookup (0.4.2)
       foundation-rails (~> 5.4.3.0)
       jquery-rails (~> 4.2.1)
       jquery-ui-rails (~> 6.0)
