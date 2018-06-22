@@ -19,12 +19,23 @@ $(".active_employee_net_id_input").autocomplete({
             response([]);
           },
           success: function (data) {
-            response( $.map(data, function( item) {
-                return {
-                  label: item.net_id + " - " + item.first_name + " " + item.last_name + " (" + item.home_orgn_desc + ")",
-                  value: item.net_id
-                }
-            }));
+            if(!data.length){
+              var result = [
+               {
+               label: 'No matches found',
+               value: response.term
+               }
+             ];
+               response(result);
+             }
+             else{
+               response( $.map(data, function( item) {
+                  return {
+                    label: item.net_id + " - " + item.first_name + " " + item.last_name + " (" + item.home_orgn_desc + ")",
+                    value: item.net_id
+                  }
+               }));
+            }
           }
         });
 
