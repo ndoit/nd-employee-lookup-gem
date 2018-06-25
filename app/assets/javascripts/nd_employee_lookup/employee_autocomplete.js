@@ -23,7 +23,7 @@ $(".active_employee_net_id_input").autocomplete({
               var result = [
                {
                label: 'No matches found',
-               value: response.term
+               value: ' '
                }
              ];
                response(result);
