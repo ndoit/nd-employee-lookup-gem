@@ -43,6 +43,10 @@ $(".active_employee_net_id_input").autocomplete({
   minLength: 3,
   delay: 300,
   select: function (event, ui) {
+    if (ui.item.value.trim() == '') {
+      event.preventDefault();
+      return;
+    }
     $(this).val(ui.item.value);
     $(this).trigger('change');
     $(this).trigger('blur');
