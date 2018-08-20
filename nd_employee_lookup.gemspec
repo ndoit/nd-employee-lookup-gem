@@ -16,19 +16,19 @@ Gem::Specification.new do |s|
 
   s.files = Dir["{app,config,db,lib}/**/*", "MIT-LICENSE", "Rakefile", "README.md"]
 
-  s.add_dependency "rails", "~> 4.2.7"
-  s.add_dependency "jquery-rails", "~> 4.2.1"
-  s.add_dependency "jquery-ui-rails", "~> 6.0"
-  s.add_dependency "foundation-rails", "~> 5.4.3.0"
+  s.add_dependency "rails", ">= 5.0.0"
+  s.add_dependency "jquery-rails"
+  s.add_dependency "jquery-ui-rails"
+  s.add_dependency "foundation-rails", "~> 5.5.3"
 
   s.add_development_dependency 'dotenv'
-  s.add_development_dependency 'rspec-rails', '~> 3.5.0'
-  s.add_development_dependency 'factory_girl_rails', '~> 4.0'
-  s.add_development_dependency 'webmock', '~> 2.1.0'
-  s.add_development_dependency 'sqlite3', '~> 1.3.11'
-  s.add_development_dependency 'shoulda-matchers', '~> 3.1.1'
-  s.add_development_dependency 'sinatra', '~> 1.4.7'
-  s.add_development_dependency 'capybara', '~> 2.7.1'
+  s.add_development_dependency 'rspec-rails'
+  s.add_development_dependency 'factory_girl_rails'
+  s.add_development_dependency 'webmock'
+  s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'shoulda-matchers'
+  s.add_development_dependency 'sinatra'
+  s.add_development_dependency 'capybara'
   # s.add_development_dependency 'selenium-webdriver', '~> 2.53.4'
   # s.add_development_dependency 'capybara-webkit', '~> 1.11.1'
   s.add_development_dependency 'database_cleaner'
