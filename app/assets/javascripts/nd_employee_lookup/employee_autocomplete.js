@@ -4,12 +4,12 @@
  * select_active_employee_net_id_input (net_id_field, net_id)  if it is available
  */
 
-function set_active_employee_net_id_autocomplete() {
+function set_active_employee_net_id_autocomplete(active = '/active') {
 
 $(".active_employee_net_id_input").autocomplete({
   source: function( request, response) {
     $.ajax({
-          url: "/employee-lookup/employee-basic/" + encodeURIComponent(request.term) + "/active",
+          url: "/employee-lookup/employee-basic/" + encodeURIComponent(request.term) + active,
           dataType: "json",
           data: {
           },
@@ -69,10 +69,10 @@ $(".active_employee_net_id_input").autocomplete({
 
 var employee_autocomplete_employee_found = Object.new;
 
-function get_employee_from_id(id) {
+function get_employee_from_id(id, active = '/active') {
   employee_autocomplete_employee_found = {};
   return($.ajax({
-    url: "/employee-lookup/employee-basic/" + encodeURIComponent(id) + "/active" ,
+    url: "/employee-lookup/employee-basic/" + encodeURIComponent(id) + active,
     dataType: "json",
     data: {
     },
