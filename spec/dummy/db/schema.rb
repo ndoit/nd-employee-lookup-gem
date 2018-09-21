@@ -1,4 +1,3 @@
-# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -30,26 +29,6 @@ ActiveRecord::Schema.define(version: 20171109021705) do
     t.datetime "updated_at",         null: false
     t.datetime "last_paid_date"
     t.date     "current_hire_date"
-  end
-
-  create_table "nd_job_lookup_employee_jobs", force: :cascade do |t|
-    t.integer  "employee_id"
-    t.integer  "pidm"
-    t.text     "posn"
-    t.text     "suffix"
-    t.text     "employee_class"
-    t.text     "primary"
-    t.date     "start_date"
-    t.date     "end_date"
-    t.text     "title"
-    t.text     "status"
-    t.text     "status_description"
-    t.date     "last_paid"
-    t.text     "orgn_code"
-    t.text     "orgn_title"
-    t.text     "pict_code"
-    t.datetime "created_at",         null: false
-    t.datetime "updated_at",         null: false
   end
 
 end
