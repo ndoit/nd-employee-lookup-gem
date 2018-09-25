@@ -1,4 +1,4 @@
-class CreateNdEmployeeLookupEmployees < ActiveRecord::Migration
+class CreateNdEmployeeLookupEmployees < ActiveRecord::Migration[4.2]
   def change
     create_table :nd_employee_lookup_employees do |t|
       t.text :net_id
