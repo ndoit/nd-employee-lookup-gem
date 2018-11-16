@@ -18,7 +18,7 @@ var personLookup = (
     }
 
     var get_person_from_id = (id) => {
-      $.ajax(
+      return $.ajax(
         personLookup.ajax_params_base(id, errorFunction, successFunction)
       );
 
