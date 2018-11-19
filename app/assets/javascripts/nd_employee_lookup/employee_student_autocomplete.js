@@ -18,7 +18,7 @@ var employeeStudentLookup = (
     }
 
     var get_employee_student_from_id = (id) => {
-      $.ajax(
+      return $.ajax(
         employeeStudentLookup.ajax_params_base(id, errorFunction, successFunction)
       );
 
