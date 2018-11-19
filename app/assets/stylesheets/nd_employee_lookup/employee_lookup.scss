@@ -81,11 +81,16 @@ div.select_box {
 
  }
 
- .ui-autocomplete-loading {
- 	background: white  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+ .ui-left-loading {
+   background: white  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+   background-position: 50px;
  }
-  .ui-autocomplete-loading:focus {
- 	background: #fafafa  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+
+ .ui-autocomplete-loading {
+   background: white  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
+ }
+ .ui-autocomplete-loading:focus {
+   background: #fafafa  asset-data-url('ui-anim_basic_16x16.gif') right center no-repeat;
  }
 
 
