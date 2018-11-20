@@ -124,7 +124,9 @@ var personLookup = (
       }
 
     var format_person_function = (item) => {
+      var first_name = "";
       var middle_initial = "";
+      var last_name = "";
       var pretty_person_id = item.person_id;
       if(typeof item.ndid !== "undefined") {
         pretty_person_id = item.ndid
@@ -132,11 +134,17 @@ var personLookup = (
       if(typeof item.netid !== "undefined") {
         pretty_person_id = item.netid
       }
+      if(typeof item.first_name !== "undefined") {
+        first_name = item.first_name
+      }
+      if(typeof item.last_name !== "undefined") {
+        last_name = " " + item.last_name
+      }
       if(typeof item.middle_initial !== "undefined") {
         middle_initial = " " + item.middle_initial
       }
       return {
-        label: pretty_person_id + " - " + item.first_name + middle_initial + " " + item.last_name,
+        label: pretty_person_id + " - " + first_name + middle_initial + last_name,
         value: item.person_id
       }
     }
