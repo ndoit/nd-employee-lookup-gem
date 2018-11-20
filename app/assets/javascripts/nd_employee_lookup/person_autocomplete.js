@@ -134,13 +134,13 @@ var personLookup = (
       if(typeof item.netid !== "undefined") {
         pretty_person_id = item.netid
       }
-      if(typeof item.first_name !== "undefined") {
+      if(typeof item.first_name !== "undefined" && item.first_name !== null) {
         first_name = item.first_name
       }
-      if(typeof item.last_name !== "undefined") {
+      if(typeof item.last_name !== "undefined" && item.last_name !== null) {
         last_name = " " + item.last_name
       }
-      if(typeof item.middle_initial !== "undefined") {
+      if(typeof item.middle_initial !== "undefined" && item.middle_initial !== null) {
         middle_initial = " " + item.middle_initial
       }
       return {

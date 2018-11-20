@@ -128,14 +128,14 @@ var employeeStudentLookup = (
       var middle_initial = "";
       var last_name = "";
       var employee_student_id = item.net_id;
-      if(typeof item.first_name !== "undefined") {
-        first_name = item.first_name
+      if(typeof item.first_name !== "undefined" && item.first_name !== null) {
+        first_name = item.first_name + " "
       }
-      if(typeof item.last_name !== "undefined") {
-        last_name = " " + item.last_name
+      if(typeof item.last_name !== "undefined" && item.last_name !== null) {
+        last_name = item.last_name
       }
-      if(typeof item.mi !== "undefined") {
-        middle_initial = " " + item.mi
+      if(typeof item.mi !== "undefined" && item.mi !== null) {
+        middle_initial = item.mi + " "
       }
       return {
         label: employee_student_id + " - " + first_name + middle_initial + last_name,
