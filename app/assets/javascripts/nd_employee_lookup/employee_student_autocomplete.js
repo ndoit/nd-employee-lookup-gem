@@ -124,20 +124,22 @@ var employeeStudentLookup = (
       }
 
     var format_employee_student_function = (item) => {
+      var first_name = "";
       var middle_initial = "";
-      var pretty_employee_student_id = item.employee_student_id;
-      if(typeof item.ndid !== "undefined") {
-        pretty_employee_student_id = item.ndid
+      var last_name = "";
+      var employee_student_id = item.net_id;
+      if(typeof item.first_name !== "undefined") {
+        first_name = item.first_name
       }
-      if(typeof item.netid !== "undefined") {
-        pretty_employee_student_id = item.netid
+      if(typeof item.last_name !== "undefined") {
+        last_name = " " + item.last_name
       }
-      if(typeof item.middle_initial !== "undefined") {
-        middle_initial = " " + item.middle_initial
+      if(typeof item.mi !== "undefined") {
+        middle_initial = " " + item.mi
       }
       return {
-        label: pretty_employee_student_id + " - " + item.first_name + middle_initial + " " + item.last_name,
-        value: item.employee_student_id
+        label: employee_student_id + " - " + first_name + middle_initial + last_name,
+        value: item.net_id
       }
     }
 
