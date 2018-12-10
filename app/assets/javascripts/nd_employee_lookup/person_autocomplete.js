@@ -89,8 +89,8 @@ var personLookup = (
 
       $(".person_id_input").autocomplete({
         source: lookup_person,
-        minLength: 3,
-        delay: 300,
+        minLength: 2,
+        delay: 150,
         autoFocus: true,
         select: select_person,
         change: person_input_change_function
