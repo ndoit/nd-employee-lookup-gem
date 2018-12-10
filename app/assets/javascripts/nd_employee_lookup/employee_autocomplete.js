@@ -40,8 +40,8 @@ $(".active_employee_net_id_input").autocomplete({
         });
 
   },
-  minLength: 3,
-  delay: 300,
+  minLength: 2,
+  delay: 150,
   autoFocus: true,
   select: function (event, ui) {
     if (ui.item.value.trim() == '') {
