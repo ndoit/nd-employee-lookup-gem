@@ -2,7 +2,7 @@ PATH
   remote: .
   specs:
     nd_employee_lookup (0.5.0)
-      foundation-rails (>= 6)
+      foundation-rails (~> 6.5.3.0)
       jquery-rails
       jquery-ui-rails
       rails (~> 5.0.0)

@@ -19,7 +19,7 @@ Gem::Specification.new do |s|
   s.add_dependency "rails", "~> 5.0.0"
   s.add_dependency "jquery-rails"
   s.add_dependency "jquery-ui-rails"
-  s.add_dependency "foundation-rails", ">= 6"
+  s.add_dependency "foundation-rails", "~> 6.5.3.0"
 
   s.add_development_dependency 'dotenv'
   s.add_development_dependency 'rspec-rails'
