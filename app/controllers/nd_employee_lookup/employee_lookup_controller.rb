@@ -6,7 +6,7 @@ require "nd_employee_lookup/errors"
 
 module NdEmployeeLookup
   class EmployeeLookupController < ApplicationController
-    # skip_before_action :user_login
+    include ApiErrorMessage
 
     protect_from_forgery with: :exception
 
@@ -15,9 +15,18 @@ module NdEmployeeLookup
     def new
     end
 
+    def find
+      search_result = HrpyEmployeePerson.exact_lookup(params[:employee_id])
+      if search_result.present?
+        render json: search_result, status: :ok
+      else
+        render json: { "Employee" => "None", "employee_title" => "No matching record"}, status: :not_found
+      end
+    end
+
     def search
-      json = HrpyEmployeePerson.search(params)
-      search_results = JSON.parse(json)
+      search_results = HrpyEmployeePerson.search(params)
+      # search_results = JSON.parse(json)
       if search_results.empty?
         render :json => JSON.parse('[{ "Employee": "None", "employee_title": "No matching records"}]')
       else
@@ -57,8 +66,8 @@ module NdEmployeeLookup
 
 
       def quick_search
-        json = HrpyEmployeePerson.quick_search(params)
-        search_results = JSON.parse(json)
+        search_results = HrpyEmployeePerson.quick_search(params)
+        # search_results = JSON.parse(json)
         render :json => search_results
       rescue => e
         case e.class.to_s
@@ -75,18 +84,6 @@ module NdEmployeeLookup
           render :json => [{error: api_error_message(e)}], :status => :unprocessable_entity
         end
       end
-
-      def api_error_message(e)
-    	    return "Invalid Parameters" if e.class.to_s == 'InvalidParams'
-    			return "HTTP Error" if e.class.to_s == 'OpenURI::HTTPError'
-    			return "Socket Error" if e.class.to_s == 'SocketError'
-    			return "Invalid URI" if e.class.to_s == 'URI::InvalidURIError'
-    			return "Server not available" if e.class.to_s === 'Errno::ECONNRESET'
-    			Rails::logger.error "API Error: #{e.message}"
-    			return "Unknown Error"
-      end
-
-
 
   end
 end
