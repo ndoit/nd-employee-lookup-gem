@@ -39,10 +39,27 @@ module NdEmployeeLookup
       #
     end
 
+    def self.exact_lookup(employee_id, status = 'active-incnew')
+      employee_prototype = HrpyEmployeePerson.search(
+        status: status, employee_id: employee_id
+      )
+        .select do |e|
+        e["net_id"] == employee_id.upcase ||
+          e['nd_id'] == employee_id
+      end.first.
+      try(:except, 'active_primary_title', 'home_coas', 'last_day_worked')
+
+      unless employee_prototype.nil?
+        return Employee.new(
+          employee_prototype
+        )
+      end
+      nil
+    end
+
     def self.search(params)
       clean_params = sanitize_params(params)
-      url_open = open lookup_url_from_params(clean_params)
-      url_open.read
+      NdEmployeeLookup::JsonParser.read(lookup_url_from_params(clean_params), use_ssl: true)
     end
 
     def self.quick_search(params)
