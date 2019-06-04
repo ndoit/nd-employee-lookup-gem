@@ -12,6 +12,12 @@ function nd_employee_lookup_set_and_display_employee(employee_data) {
   $('#employee_lookup_employee_ecls_code').val(employee_data.ecls_code);
   $('#employee_lookup_employee_last_paid_date').val(employee_data.last_paid_date);
   $('#employee_lookup_employee_employee_pict_code').val(employee_data.employee_pict_code);
+  $('#employee_lookup_employee_current_hire_date').val(employee_data.current_hire_date);
+  $('#employee_lookup_employee_first_hire_date').val(employee_data.first_hire_date);
+  $('#employee_lookup_employee_term_reason_code').val(employee_data.term_reason_code);
+  $('#employee_lookup_employee_term_date').val(employee_data.term_date);
+  $('#employee_lookup_employee_adjusted_service_date').val(employee_data.adjusted_service_date);
+  $('#employee_lookup_employee_seniority_date').val(employee_data.seniority_date);
   $('#employee_lookup').submit();
 }
 
@@ -33,6 +39,12 @@ function nd_employee_lookup_set_employee_input (emp_sel_box) {
   emp_array.ecls_code = $('#'+emp_sel_box).find('span.emp_sel_ecls_code').text();
   emp_array.last_paid_date = $('#'+emp_sel_box).find('span.emp_sel_last_paid_date').text();
   emp_array.employee_pict_code = $('#'+emp_sel_box).find('span.emp_sel_pict_code').text();
+  emp_array.current_hire_date = $('#'+emp_sel_box).find('span.emp_sel_current_hire_date').text();
+  emp_array.first_hire_date = $('#'+emp_sel_box).find('span.emp_sel_first_hire_date').text();
+  emp_array.term_reason_code = $('#'+emp_sel_box).find('span.emp_sel_term_reason_code').text();
+  emp_array.term_date = $('#'+emp_sel_box).find('span.emp_sel_term_date').text();
+  emp_array.adjusted_service_date = $('#'+emp_sel_box).find('span.emp_sel_adjusted_service_date').text();
+  emp_array.seniority_date = $('#'+emp_sel_box).find('span.emp_sel_seniority_date').text();
   return emp_array;
 }
 
@@ -46,6 +58,12 @@ function nd_employee_lookup_build_employee_selection (input) {
   emp_string += '<div class="large-12 medium-12 small-12 columns left ">';
   emp_string += '<strong><span>Name: <span class="emp_sel_last">' + input.last_name + '</span>, <span class="emp_sel_first">' + input.first_name + '</span><span class="emp_sel_pidm">' + input.pidm + '</span></span></strong>';
   emp_string += '<span class="emp_sel_middle">' + input.middle_init + '</span><span class="emp_sel_status">' + input.employee_status + '</span><span class="emp_sel_ecls_code">' + input.ecls_code + '</span><span class="emp_sel_last_paid_date">' + input.last_paid_date + '</span><span class="emp_sel_pict_code">' + input.employee_pict_code + '</span>';
+  emp_string += '<span class="emp_sel_current_hire_date">' + input.current_hire_date + '</span>';
+  emp_string += '<span class="emp_sel_first_hire_date">' + input.first_hire_date + '</span>';
+  emp_string += '<span class="emp_sel_term_reason_code">' + input.term_reason_code + '</span>';
+  emp_string += '<span class="emp_sel_term_date">' + input.term_date + '</span>';
+  emp_string += '<span class="emp_sel_adjusted_service_date">' + input.adjusted_service_date + '</span>';
+  emp_string += '<span class="emp_sel_seniority_date">' + input.seniority_date + '</span>';
   emp_string += '</div></div>';
   emp_string += ' <div class="row">';
   emp_string += ' <div class="large-2 medium-1 small-3 columns left"><label>NetID:</label></div>';

@@ -12,6 +12,12 @@
   <%= e.hidden_field :ecls_code %>
   <%= e.hidden_field :employee_pict_code %>
   <%= e.hidden_field :last_paid_date %>
+  <%= e.hidden_field :current_hire_date %>
+  <%= e.hidden_field :first_hire_date %>
+  <%= e.hidden_field :term_reason_code %>
+  <%= e.hidden_field :term_date %>
+  <%= e.hidden_field :adjusted_service_date %>
+  <%= e.hidden_field :seniority_date %>
   <%= e.fields_for :employee_jobs do |j| %>
     <%= j.hidden_field :title %>
     <%= j.hidden_field :orgn_code %>
@@ -20,9 +26,11 @@
     <%= j.hidden_field :status %>
     <%= j.hidden_field :status_description %>
     <%= j.hidden_field :last_paid %>
+    <%= j.hidden_field :pidm %>
     <%= j.hidden_field :posn %>
     <%= j.hidden_field :suffix %>
     <%= j.hidden_field :employee_class %>
+    <%= j.hidden_field :pict_code %>
     <%= j.hidden_field :start_date %>
     <%= j.hidden_field :end_date %>
   <% end %>
