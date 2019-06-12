@@ -17,7 +17,7 @@ PATH
       foundation-rails (~> 5.4.3.0)
       jquery-rails (~> 4.2)
       jquery-ui-rails (~> 6.0)
-      rails (~> 5.0)
+      rails
 
 GEM
   remote: https://rubygems.org/
@@ -233,4 +233,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.2
+   1.17.3
