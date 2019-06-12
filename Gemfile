@@ -13,6 +13,7 @@ gemspec
 # To use a debugger
 # gem 'byebug', group: [:development, :test]
 gem 'nd_job_lookup', git: 'git@bitbucket.org:nd-oit/nd-job-lookup-gem.git'
+#gem 'nd_job_lookup', path: '~/projects/nd_api/nd-job-lookup-gem'
 
 gem 'jquery-ui-rails'
 #gem 'capybara-webkit'
