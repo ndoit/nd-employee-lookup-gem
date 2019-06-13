@@ -1,4 +1,4 @@
-class AddTermReasonToEmployee < ActiveRecord::Migration
+class AddTermReasonToEmployee < ActiveRecord::Migration[4.2]
   def change
     add_column :nd_employee_lookup_employees, :first_hire_date, :date
     add_column :nd_employee_lookup_employees, :term_reason_code, :string
