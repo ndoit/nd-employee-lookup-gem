@@ -1,12 +1,12 @@
 GIT
   remote: git@bitbucket.org:nd-oit/nd-job-lookup-gem.git
-  revision: 23908c87f727faf8ff2a849d0e79113bd8eee40e
+  revision: 4d7097bfffafaef87cb4f77e4ad1abeff57fd1a0
   specs:
-    nd_job_lookup (0.4.5)
-      foundation-rails (~> 5.4.3.0)
+    nd_job_lookup (0.5.0)
+      foundation-rails
       jquery-rails (~> 4.2)
-      nd_employee_lookup (~> 0.4.5)
-      rails (~> 5.0)
+      nd_employee_lookup (~> 0.5.0)
+      rails
       slim
       slim-rails
 
@@ -199,7 +199,7 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     sqlite3 (1.4.1)
-    temple (0.8.1)
+    temple (0.8.2)
     thor (0.20.3)
     thread_safe (0.3.6)
     tilt (2.0.9)
