@@ -6,7 +6,7 @@ require "nd_employee_lookup/errors"
 
 module NdEmployeeLookup
   class EmployeeLookupController < ApplicationController
-    skip_before_action :user_login
+    # skip_before_action :user_login
 
     protect_from_forgery with: :exception
 
