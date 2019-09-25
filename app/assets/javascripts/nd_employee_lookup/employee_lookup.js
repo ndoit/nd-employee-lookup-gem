@@ -59,7 +59,7 @@ function nd_employee_lookup_build_employee_selection (input) {
   var emp_string =  '<div class="row ">';
   emp_string += '<div class="large-12 medium-12 small-12 columns left ">';
   emp_string += '<strong><span>Name: <span class="emp_sel_last">' + input.last_name + '</span>, <span class="emp_sel_first">' + input.first_name + '</span><span class="emp_sel_pidm">' + input.pidm + '</span></span></strong>';
-  emp_string += '<span class="emp_sel_middle">' + (input.middle_init ||'') + '</span><span class="emp_sel_status">' + (input.employee_status ||'') + '</span><span class="emp_sel_ecls_code">' + (input.ecls_code ||'') + '</span><span class="emp_sel_last_paid_date">' + (input.last_paid_date ||'') + '</span><span class="emp_sel_pict_code">' + (input.employee_pict_code ||'') + '</span>';
+  emp_string += '<span class="emp_sel_middle">' + (input.middle_init ||'') + '</span><span class="emp_sel_status">' + (input.employee_status ||'') + '</span><span class="emp_sel_ecls_code">' + (input.ecls_code ||'') + '</span><span class="emp_sel_bcat_code">' + (input.bcat_code ||'') + '</span><span class="emp_sel_last_paid_date">' + (input.last_paid_date ||'') + '</span><span class="emp_sel_pict_code">' + (input.employee_pict_code ||'') + '</span>';
   emp_string += '<span class="emp_sel_current_hire_date">' + (input.current_hire_date ||'') + '</span>';
   emp_string += '<span class="emp_sel_first_hire_date">' + (input.first_hire_date ||'') + '</span>';
   emp_string += '<span class="emp_sel_term_reason_code">' + (input.term_reason_code ||'') + '</span>';
