@@ -10,6 +10,7 @@ function nd_employee_lookup_set_and_display_employee(employee_data) {
   $('#employee_lookup_employee_primary_title').val(employee_data.primary_title);
   $('#employee_lookup_employee_employee_status').val(employee_data.employee_status);
   $('#employee_lookup_employee_ecls_code').val(employee_data.ecls_code);
+  $('#employee_lookup_employee_bcat_code').val(employee_data.bcat_code);
   $('#employee_lookup_employee_last_paid_date').val(employee_data.last_paid_date);
   $('#employee_lookup_employee_employee_pict_code').val(employee_data.employee_pict_code);
   $('#employee_lookup_employee_current_hire_date').val(employee_data.current_hire_date);
@@ -37,6 +38,7 @@ function nd_employee_lookup_set_employee_input (emp_sel_box) {
   emp_array.active_primary_title = $('#'+emp_sel_box).find('span.emp_sel_title').text();
   emp_array.employee_status = $('#'+emp_sel_box).find('span.emp_sel_status').text();
   emp_array.ecls_code = $('#'+emp_sel_box).find('span.emp_sel_ecls_code').text();
+  emp_array.bcat_code = $('#'+emp_sel_box).find('span.emp_sel_bcat_code').text();
   emp_array.last_paid_date = $('#'+emp_sel_box).find('span.emp_sel_last_paid_date').text();
   emp_array.employee_pict_code = $('#'+emp_sel_box).find('span.emp_sel_pict_code').text();
   emp_array.current_hire_date = $('#'+emp_sel_box).find('span.emp_sel_current_hire_date').text();
