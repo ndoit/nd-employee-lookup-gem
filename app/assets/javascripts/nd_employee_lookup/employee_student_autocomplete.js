@@ -90,7 +90,7 @@ var employeeStudentLookup = (
       $(".employee_student_id_input").autocomplete({
         source: lookup_employee_student,
         minLength: 2,
-        delay: 150,
+        delay: 450,
         autoFocus: true,
         select: select_employee_student,
         change: employee_student_input_change_function

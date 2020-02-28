@@ -90,7 +90,7 @@ var personLookup = (
       $(".person_id_input").autocomplete({
         source: lookup_person,
         minLength: 2,
-        delay: 150,
+        delay: 450,
         autoFocus: true,
         select: select_person,
         change: person_input_change_function

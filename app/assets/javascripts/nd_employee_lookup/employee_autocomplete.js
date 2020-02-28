@@ -41,7 +41,7 @@ $(".active_employee_net_id_input").autocomplete({
 
   },
   minLength: 2,
-  delay: 150,
+  delay: 450,
   autoFocus: true,
   select: function (event, ui) {
     if (ui.item.value.trim() == '') {
