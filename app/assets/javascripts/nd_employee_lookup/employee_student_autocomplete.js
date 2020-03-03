@@ -101,9 +101,12 @@ var employeeStudentLookup = (
 
     var lookup_employee_student_error_base =
       (XMLHttpRequest, textStatus, errorThrown, response) => {
-        if (errorThrown != 'Not Found')
+        if (errorThrown != 'Not Found') {
           alert('An error occurred while searching NDIDs.  ' +
             'Verify the HR/PY API is running [' + errorThrown + ']');
+        } else {
+          alert('Not Found');
+        }
         response([]);
       }
 
